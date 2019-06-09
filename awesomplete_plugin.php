@@ -14,7 +14,7 @@
 
 
 // Globals
-$plugin_url = WP_PLUGIN_URL . '/awesomplete_plugin';
+$dcj_plugin_url = WP_PLUGIN_URL . '/awesomplete_plugin';
 
 
 class DCJ_Awesomplete_Widget extends WP_Widget {
@@ -41,24 +41,17 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
-        require( 'awesomplete_datalist.php' )
+		// create actual searchform
+        require( 'widget_searchform.php' );
 
-        // trying to create a search form that accesses the awesomplete class here
-        ?>
-		<p>
-            <link rel="stylesheet" href="inc/awesomplete.css" />
-            <script src="inc/awesomplete.js" async></script>
-            <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <label for="<?php echo $this->get_field_id( 'title' ); ?>">
-                    <input class="awesomplete widefat" datalist="#awesomplete_datalist", id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-                    <button type="submit" class="search-submit">Search</button>
-                </label>
-            </form>
-		</p>
+		// invisible actual search form, trying to either replicate this call
+		//  'get_search_form' or pass search terms to it
+		?>
+		<div style="display: none">
+			<?php get_search_form(); ?>
+		</div>
 
-
-        <?php
-        // get_search_form();
+		<?php
 
 		echo $args['after_widget'];
 
@@ -67,9 +60,10 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
         // Save widget options
 
-        $instance = $old_instance;
-        $instance['title'] = strip_tags($new_instance['title']);
-        return $instance;
+		$instance          = $old_instance;
+		$new_instance      = wp_parse_args( (array) $new_instance, array( 'title' => '' ) );
+		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+		return $instance;
 	}
 
 	function form( $instance ) {
