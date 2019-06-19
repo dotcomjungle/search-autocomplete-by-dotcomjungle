@@ -1,14 +1,22 @@
+<?php
+global $dcj_awesomplete_plugin_url
+?>
+
+<link rel="stylesheet" href="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete.css'; ?>" />
+<script src="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete.js'; ?>" async></script>
+
+
 <!-- create datalist of post titles as invisible <ul> for awesomplete -->
     <?php
     // query for your post type
-    $dcj_post_type_query  = new WP_Query(  
-        array (  
+    $dcj_post_type_query  = new WP_Query(
+        array (
             'post_type'      => 'post',
             'posts_per_page' => -1
-        )  
-    );   
+        )
+    );
     // we need the array of posts
-    $dcj_posts_array      = $dcj_post_type_query->posts;   
+    $dcj_posts_array      = $dcj_post_type_query->posts;
     // create a list with needed information
     $dcj_post_title_array = wp_list_pluck( $dcj_posts_array, 'post_title' );
 
@@ -24,8 +32,6 @@
     </ul>
 
 <!-- simple html for awesomplete -->
-    <link rel="stylesheet" href="inc/awesomplete.css" />
-    <script src="inc/awesomplete.js" async></script>
 
     <form name="dcj-search">
         <input class="awesomplete" data-list="#dcj-awesomplete-datalist" name="awesomplete_search_input" type="text" />

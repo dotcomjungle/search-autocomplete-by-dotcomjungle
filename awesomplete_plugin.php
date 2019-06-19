@@ -3,7 +3,7 @@
 /*
  *	Plugin Name: DCJ Awesomplete Search Plugin
  *	Plugin URI: https://leaverou.github.io/awesomplete/
- *	Description: Awesomplete-powered autocomplete plugin
+ *	Description: Dotcomjungle's Awesomplete-powered autocomplete search-widget
  *	Version: 1.0
  *	Author: Julian Rice
  *	Author URI: https://www.dotcomjungle.com
@@ -14,7 +14,7 @@
 
 
 // Globals
-$dcj_plugin_url = WP_PLUGIN_URL . '/awesomplete_plugin';
+$dcj_awesomplete_plugin_url = plugins_url() . "/awesomplete_plugin/";
 
 
 class DCJ_Awesomplete_Widget extends WP_Widget {
@@ -47,9 +47,9 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 		// invisible actual search form, trying to either replicate this call
 		//  'get_search_form' or pass search terms to it
 		?>
-		<div style="display: none">
-			<?php get_search_form(); ?>
-		</div>
+<!--		<div style="display: none">-->
+<!--			--><?php //get_search_form(); ?>
+<!--		</div>-->
 
 		<?php
 
