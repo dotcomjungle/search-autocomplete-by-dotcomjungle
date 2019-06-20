@@ -1,5 +1,7 @@
 <!-- for naming widget in admin backend -->
 
+<?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
+
 <body>
   <p>
     <label>Title</label> 

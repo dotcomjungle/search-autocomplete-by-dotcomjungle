@@ -12,6 +12,7 @@
 */
 
 
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 // Globals
 $dcj_awesomplete_plugin_url = plugins_url() . "/awesomplete_plugin/";
@@ -41,17 +42,8 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
-		// create actual searchform
+        // create actual searchform
         require( 'widget_searchform.php' );
-
-		// invisible actual search form, trying to either replicate this call
-		//  'get_search_form' or pass search terms to it
-		?>
-<!--		<div style="display: none">-->
-<!--			--><?php //get_search_form(); ?>
-<!--		</div>-->
-
-		<?php
 
 		echo $args['after_widget'];
 

@@ -1,4 +1,8 @@
 <?php
+
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
+
 global $dcj_awesomplete_plugin_url;
 ?>
 
@@ -7,9 +11,7 @@ global $dcj_awesomplete_plugin_url;
 <script src="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete.js'; ?>"></script>
 
 
-<div id="dev_out"></div>
-
-<!-- create datalist of post titles as invisible <ul> for awesomplete -->
+<!-- getting post titles and urls  -->
     <?php
     // query for your post type
     $dcj_post_type_query  = new WP_Query(
@@ -23,37 +25,56 @@ global $dcj_awesomplete_plugin_url;
     // create a list with needed information
     $dcj_post_id_array = wp_list_pluck( $dcj_posts_array, 'ID' );
 
-    ?>
-
-<!-- creating an html unordered list output for awesomplete to access   style="display: none"  -->
-    <ul id="dcj-awesomplete-datalist" >
-    <?php
-    $dcj_title_and_urls = array();
+    // titles for awesomplete
+    $dcj_post_titles = array();
     foreach( $dcj_post_id_array as $dcj_post_id ) {
-        array_push( $dcj_title_and_urls, array(
-                "label" => get_the_title($dcj_post_id),
-                "value" => get_the_permalink($dcj_post_id)
-        ));
+        array_push( $dcj_post_titles, get_the_title($dcj_post_id) );
     };
+    // associative array for title to url
+    $dcj_title_to_urls = array();
+    foreach( $dcj_post_id_array as $dcj_post_id ) {
+        $dcj_title_to_urls[get_the_title($dcj_post_id)] = get_the_permalink($dcj_post_id);
+    };
+
     ?>
-    </ul>
 
-<!-- simple js for awesomplete -->
-
-    <form id="dcj_awesomplete_search_form" name="dcj-search">
-        <input id="awesomplete_search_input" name="awesomplete_search_input" type="text" />
-        <button id="awesomplete_search_submit" type="submit" class="search-submit">Search</button>
-    </form>
+<!-- default searchform-->
+    <div id="wp-default-search-form">
+        <?php get_search_form(); ?>
+    </div>
 
     <script>
-        let awesomplete_input = document.getElementById("awesomplete_search_input");
-        let awes = new Awesomplete( awesomplete_input, {
-            list: <?php echo json_encode($dcj_title_and_urls); ?>
+        let awesomplete_inputs_list = document.querySelectorAll( "div#wp-default-search-form input" );
+        let awesomplete_input = awesomplete_inputs_list[0];
+    </script>
+
+
+<!-- simple js for awesomplete -->
+    <script>
+        // create awesomplete object
+        // let awesomplete_input = document.getElementById("awesomplete_search_input");
+        let awes = new Awesomplete(awesomplete_input, {
+            list: <?php echo json_encode($dcj_post_titles); ?>
         });
-        let awes_form = document.getElementById("dcj_awesomplete_search_form");
-        awes_form.addEventListener("awesomplete-select", function() {
-            // console.log("yep");
-            window.location.href = document.getElementById("awesomplete_search_input").value;
+
+        // redirect to selected site
+        let awes_form_div = document.querySelector("div.awesomplete");
+        awes_form_div.addEventListener("awesomplete-selectcomplete", function () {
+            let title = awesomplete_input.value;
+            let title_to_url = <?php echo json_encode($dcj_title_to_urls); ?>;
+            window.location.href = title_to_url[title];
         });
     </script>
 
+<!-- fixing awesomplete styles-->
+    <style>
+        div.awesomplete {
+            width: 100%;
+        }
+        div.awesomplete > input {
+            width: 100%;
+        }
+        div.awesomplete mark, ul, li {
+            color: black;
+        }
+    </style>
