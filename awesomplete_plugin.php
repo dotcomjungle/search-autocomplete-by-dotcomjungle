@@ -68,10 +68,10 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 
 	function form( $instance ) {
         // Output admin widget options form
-        
+
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
         $title    = esc_attr($instance['title']);
-        require( 'inc/widget-fields.php' );
+        require( 'widget-fields.php' );
 
 	}
 }
