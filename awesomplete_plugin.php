@@ -27,7 +27,7 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
                 'description'                 => __( "Dotcomjungle's Awesomplete Search Widget" ),
                 'customize_selective_refresh' => true,
             );
-            parent::__construct( 'dcj_search', _x( "Dotcomjungle's Awesomplete Search Widget", 'Autocomplete search widget powered by Awesomplete' ), $widget_ops );
+            parent::__construct( 'dcj_awesomplete_widget', _x( "Dotcomjungle's Awesomplete Search Widget", 'DCJs Autocomplete search widget powered by Awesomplete' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {
@@ -63,6 +63,7 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
         $title    = esc_attr($instance['title']);
+
         require( 'widget-fields.php' );
 
 	}
@@ -74,3 +75,87 @@ function dcj_awesomplete_register_widgets() {
 
 add_action( 'widgets_init', 'dcj_awesomplete_register_widgets' );
 
+
+
+
+
+
+function dcj_awesomplete_add_options() {
+
+    // use the add_options_page function
+    // add_options_page( $page_title, $menu_title, $capability, $menu-slug, $function)
+
+    add_options_page(
+        "Dotcomjungle's Awesomplete Search Widget",
+        'DCJ Awesomplete Search',
+        'manage_options',
+        'dcj-awesomplete-options',
+        'dcj_awesomplete_options_page'
+    );
+    //
+
+};
+
+function dcj_awesomplete_options_page () {
+
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( 'perimission denied' );
+    };
+
+    $default_options = dcj_awes_defaults();
+
+    $options = array();
+    // update options on submit
+    if ( $_POST['dcj_awes_options_submitted'] == "yes") {
+        if (isset($_POST['dcj_restore_defaults'])) {
+            $options = $default_options;
+        } else {
+            $options['background_color']    = $_POST['background_select'];
+            $options['text_color']          = $_POST['text_color_select'];
+            $options['highlight_color']     = $_POST['highlight_color_select'];
+            $options['max_items']           = absint($_POST['max_items']);
+            if ($options['max_items'] == 0) {
+                $options['max_items'] = 1;
+            }
+            $options['post_types']          = array();
+            foreach (get_post_types(array('public' => true)) as $type) {
+                $options['post_types'][$type] = $_POST['type_'.$type];
+            };
+            $options['last_update']         = time();
+        }
+        update_option('dcj_awes_options', $options);
+
+    };
+
+    // get options from database
+    $options = get_option('dcj_awes_options');
+    if ($options === false || $options == '') {
+        // defaults
+        $options = $default_options;
+    };
+
+    require('options_page.php');
+
+}
+
+add_action( 'admin_menu', 'dcj_awesomplete_add_options');
+
+
+function dcj_awes_defaults() {
+    // set defaults
+    $default_options = array(
+        'background_color' => 'white',
+        'text_color' => 'black',
+        //    'highlight_color'   => 'yellow'
+        'post_types' => array(),
+        'max_items' => '10'
+    );
+    foreach (get_post_types(array('public' => true)) as $type) {
+        if ($type == 'post') {
+            $default_options['post_types'][$type] = 'true';
+        } else {
+            $default_options['post_types'][$type] = null;
+        }
+    }
+    return $default_options;
+}
