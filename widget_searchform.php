@@ -47,7 +47,6 @@ global $default_options;
     foreach( $dcj_post_id_array as $dcj_post_id ) {
         $dcj_title_to_urls[get_the_title($dcj_post_id)] = get_the_permalink($dcj_post_id);
     };
-
     ?>
 
 <!-- default searchform-->
@@ -91,8 +90,12 @@ global $default_options;
 
 <!-- simple js for awesomplete -->
     <script>
-        // get first input in search form
-        let awesomplete_inputs_list = document.querySelectorAll( "div#dcj_widget_search_form input" );
+        // get first text input in search form
+        let awesomplete_inputs_list = document.querySelectorAll(
+            '#dcj_widget_search_form input[type="text"], ' +
+            '#dcj_widget_search_form input[type="search"], ' +
+            '#dcj_widget_search_form input:not([type])'
+        );
         let awesomplete_input = awesomplete_inputs_list[0];
         // create awesomplete object
         let awes = new Awesomplete(awesomplete_input, {
