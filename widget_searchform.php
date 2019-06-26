@@ -51,7 +51,7 @@ global $default_options;
     ?>
 
 <!-- default searchform-->
-    <div id="wp-default-search-form">
+    <div id="dcj_widget_search_form">
         <?php get_search_form(); ?>
     </div>
 
@@ -69,8 +69,8 @@ global $default_options;
 <!-- awesomplete styles -->
 
     <style>
-        #wp-default-search-form button[type="submit"],
-        #wp-default-search-form input[type="submit"] {
+        #dcj_widget_search_form button[type="submit"],
+        #dcj_widget_search_form input[type="submit"] {
             display: <?php if ($options['display_button'] == 'true') {echo "inline-block";}
                                 else {echo "none";}; ?>
         }
@@ -82,16 +82,17 @@ global $default_options;
     } elseif ($options['awes_theme_color'] == 'grey') {
         $theme_sheet = 'awesomplete_grey.css';
     } else {
-        $theme_sheet = 'awesomplete.css';
+        $theme_sheet = 'awesomplete_light.css';
     }
     ?>
+    <link rel="stylesheet" href="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete_base.css'; ?>" />
     <link rel="stylesheet" href="<?php echo $dcj_awesomplete_plugin_url . 'inc/' . $theme_sheet; ?>" />
 
 
 <!-- simple js for awesomplete -->
     <script>
         // get first input in search form
-        let awesomplete_inputs_list = document.querySelectorAll( "div#wp-default-search-form input" );
+        let awesomplete_inputs_list = document.querySelectorAll( "div#dcj_widget_search_form input" );
         let awesomplete_input = awesomplete_inputs_list[0];
         // create awesomplete object
         let awes = new Awesomplete(awesomplete_input, {
