@@ -5,10 +5,9 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 global $dcj_awesomplete_plugin_url;
 global $default_options;
+
 ?>
 
-
-<link rel="stylesheet" href="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete.css'; ?>" />
 <script src="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete.js'; ?>"></script>
 
 
@@ -17,7 +16,7 @@ global $default_options;
     // get admin options for what post types to have awesomplete access
     $options = get_option('dcj_awes_options');
     if ($options === false || $options == '') {
-        $query_post_types = 'post';
+        $query_post_types = dcj_awes_defaults()['post_types'];
     } else {
         $query_post_types = array();
         foreach($options['post_types'] as $type => $on) {
@@ -66,6 +65,29 @@ global $default_options;
     };
     ?>
 
+
+<!-- awesomplete styles -->
+
+    <style>
+        #wp-default-search-form button[type="submit"],
+        #wp-default-search-form input[type="submit"] {
+            display: <?php if ($options['display_button'] == 'true') {echo "inline-block";}
+                                else {echo "none";}; ?>
+        }
+    </style>
+
+    <?php
+    if ($options['awes_theme_color'] == 'dark') {
+        $theme_sheet = 'awesomplete_dark.css';
+    } elseif ($options['awes_theme_color'] == 'grey') {
+        $theme_sheet = 'awesomplete_grey.css';
+    } else {
+        $theme_sheet = 'awesomplete.css';
+    }
+    ?>
+    <link rel="stylesheet" href="<?php echo $dcj_awesomplete_plugin_url . 'inc/' . $theme_sheet; ?>" />
+
+
 <!-- simple js for awesomplete -->
     <script>
         // get first input in search form
@@ -74,7 +96,7 @@ global $default_options;
         // create awesomplete object
         let awes = new Awesomplete(awesomplete_input, {
             list: <?php echo json_encode($dcj_post_titles); ?>,
-            minChars: 1,
+            minChars: <?php echo $options['min_chars']; ?>,
             maxItems: <?php echo $options['max_items']; ?>
         });
 
@@ -88,25 +110,3 @@ global $default_options;
     </script>
 
 
-
-<!-- fixing awesomplete styles-->
-
-    <style>
-        div.awesomplete {
-            width: auto;
-        }
-        div.awesomplete > input {
-            width: 100%;
-        }
-        div.awesomplete ul,
-        div.awesomplete ul:before,
-        div.awesomplete li {
-            color: <?php echo $options['text_color']; ?>;
-            background-color: <?php echo $options['background_color']; ?>;
-        }
-        div.awesomplete mark,
-        div.awesomplete li:hover {
-            color: <?php echo $options['text_color']; ?>;
-        }
-
-    </style>

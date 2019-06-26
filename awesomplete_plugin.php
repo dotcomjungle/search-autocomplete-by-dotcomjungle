@@ -110,19 +110,18 @@ function dcj_awesomplete_options_page () {
         if (isset($_POST['dcj_restore_defaults'])) {
             $options = $default_options;
         } else {
-            $options['background_color']    = $_POST['background_select'];
-            $options['text_color']          = $_POST['text_color_select'];
-            $options['highlight_color']     = $_POST['highlight_color_select'];
+            $options['awes_theme_color']    = $_POST['awes_theme_color'];
+            $options['highlight_color']     = $_POST['highlight_color'];
+            $options['display_button']      = $_POST['display_button'];
             $options['max_items']           = absint($_POST['max_items']);
-            if ($options['max_items'] == 0) {
-                $options['max_items'] = 1;
-            }
+            $options['min_chars']           = absint($_POST['min_chars']);
             $options['post_types']          = array();
             foreach (get_post_types(array('public' => true)) as $type) {
                 $options['post_types'][$type] = $_POST['type_'.$type];
             };
             $options['last_update']         = time();
         }
+
         update_option('dcj_awes_options', $options);
 
     };
@@ -130,7 +129,6 @@ function dcj_awesomplete_options_page () {
     // get options from database
     $options = get_option('dcj_awes_options');
     if ($options === false || $options == '') {
-        // defaults
         $options = $default_options;
     };
 
@@ -144,14 +142,16 @@ add_action( 'admin_menu', 'dcj_awesomplete_add_options');
 function dcj_awes_defaults() {
     // set defaults
     $default_options = array(
-        'background_color' => 'white',
-        'text_color' => 'black',
-        //    'highlight_color'   => 'yellow'
+        'awes_theme_color' => 'white',
+        'highlight_color' => 'yellow',
         'post_types' => array(),
-        'max_items' => '10'
+        'max_items' => '5',
+        'min_chars' => '2',
+        'display_button' => 'true'
     );
+    // add current post types
     foreach (get_post_types(array('public' => true)) as $type) {
-        if ($type == 'post') {
+        if ($type == 'post' || $type == 'product') {
             $default_options['post_types'][$type] = 'true';
         } else {
             $default_options['post_types'][$type] = null;

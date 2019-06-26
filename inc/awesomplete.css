@@ -10,10 +10,15 @@
 .awesomplete {
 	display: inline-block;
 	position: relative;
+	/* mine */
+	width: 100%;
 }
 
 .awesomplete > input {
 	display: block;
+	/* mine */
+	width: 100%;
+
 }
 
 .awesomplete > ul {
@@ -101,4 +106,3 @@
 	background: hsl(86, 100%, 21%);
 	color: inherit;
 }
-/*# sourceMappingURL=awesomplete.css.map */
