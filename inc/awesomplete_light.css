@@ -1,39 +1,39 @@
-#dcj_widget_search_form .awesomplete > ul {
-	background: #ffffff;
-	background: hsla(0,0%,100%,.9);
-	background: linear-gradient(to bottom right, white, hsla(0,0%,100%,.8));
+div.awesomplete > ul {
+	background: #ffffff !important;
+	background: hsla(0,0%,100%,.9) !important;
+	background: linear-gradient(to bottom right, white, hsla(0,0%,100%,.8)) !important;
 }
 
 /* Pointer */
-#dcj_widget_search_form .awesomplete > ul:before {
-	background: white;
+div.awesomplete > ul:before {
+	background: white !important;
 }
 
-#dcj_widget_search_form .awesomplete > ul > li {
-	color: black;
-	border-color: #ccd6d8;
+div.awesomplete > ul > li {
+	color: black !important;
+	border-color: #ccd6d8 !important;
 }
 
-#dcj_widget_search_form .awesomplete > ul > li:hover {
-	background: hsl(200, 40%, 80%);
-	color: black;
+div.awesomplete > ul > li:hover {
+	background: hsl(200, 40%, 80%) !important;
+	color: black !important;
 }
 
-#dcj_widget_search_form .awesomplete > ul > li[aria-selected="true"] {
-	background: hsl(205, 40%, 40%);
-	color: black;
+div.awesomplete > ul > li[aria-selected="true"] {
+	background: hsl(205, 40%, 40%) !important;
+	color: black !important;
 }
 
-#dcj_widget_search_form .awesomplete mark {
-	background: hsl(65, 100%, 50%);
-	color: black;
+div.awesomplete mark {
+	background: hsl(65, 100%, 50%) !important;
+	color: black !important;
 }
 
-#dcj_widget_search_form .awesomplete li:hover mark {
-	background: hsl(68, 100%, 41%);
+div.awesomplete li:hover mark {
+	background: hsl(68, 100%, 41%) !important;
 }
 
-#dcj_widget_search_form .awesomplete li[aria-selected="true"] mark {
-	background: hsl(86, 100%, 21%);
-	color: inherit;
+div.awesomplete li[aria-selected="true"] mark {
+	background: hsl(86, 100%, 21%) !important;
+	color: inherit !important;
 }

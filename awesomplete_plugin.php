@@ -1,12 +1,12 @@
 <?php
 
 /*
- *	Plugin Name: DCJ Awesomplete Search Plugin
- *	Plugin URI: https://leaverou.github.io/awesomplete/
- *	Description: Dotcomjungle's Awesomplete-powered autocomplete search-widget
+ *	Plugin Name: DCJ Autocomplete Search
+ *	Plugin URI: https://www.dotcomjungle.com
+ *	Description: Dotcomjungle's high power, low overhead autocomplete search widget. Highly customizable, it is powered by Lea Verou's 'Awesomplete' and built to work with any theme.
  *	Version: 1.0
  *	Author: Julian Rice
- *	Author URI: https://www.dotcomjungle.com
+ *	Author URI: https://github.com/JRice15
  *	License: GPL2
  *
 */
@@ -15,7 +15,7 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 // Globals
-$dcj_awesomplete_plugin_url = plugins_url() . "/awesomplete_plugin/";
+$dcj_awesomplete_plugin_url = plugin_dir_url(__FILE__);
 
 
 class DCJ_Awesomplete_Widget extends WP_Widget {
@@ -106,18 +106,19 @@ function dcj_awesomplete_options_page () {
 
     $options = array();
     // update options on submit
-    if ( $_POST['dcj_awes_options_submitted'] == "yes") {
+    if ( esc_html($_POST['dcj_awes_options_submitted']) == "yes") {
         if (isset($_POST['dcj_restore_defaults'])) {
             $options = $default_options;
         } else {
-            $options['awes_theme_color']    = $_POST['awes_theme_color'];
-            $options['highlight_color']     = $_POST['highlight_color'];
-            $options['display_button']      = $_POST['display_button'];
-            $options['max_items']           = absint($_POST['max_items']);
-            $options['min_chars']           = absint($_POST['min_chars']);
+            $options['awes_theme_color']    = esc_attr($_POST['awes_theme_color']);
+            $options['display_button']      = esc_attr($_POST['display_button']);
+            $options['max_items']           = max(array(absint($_POST['max_items']), 1));
+            $options['min_chars']           = max(array(absint($_POST['min_chars']), 1));
+            $options['input_id']            = preg_replace('/\s+/', '', esc_attr($_POST['input_id_select_1']));
             $options['post_types']          = array();
             foreach (get_post_types(array('public' => true)) as $type) {
-                $options['post_types'][$type] = $_POST['type_'.$type];
+                $type = esc_attr($type);
+                $options['post_types'][$type] = esc_attr($_POST['type_'.$type]);
             };
             $options['last_update']         = time();
         }
@@ -147,14 +148,15 @@ function dcj_awes_defaults() {
         'post_types' => array(),
         'max_items' => '5',
         'min_chars' => '2',
-        'display_button' => 'true'
+        'display_button' => 'true',
+        'input_id' => '',
     );
     // add current post types
     foreach (get_post_types(array('public' => true)) as $type) {
-        if ($type == 'post' || $type == 'product') {
-            $default_options['post_types'][$type] = 'true';
+        if ($type === 'post' || $type === 'product') {
+            $default_options['post_types'][esc_attr($type)] = 'true';
         } else {
-            $default_options['post_types'][$type] = null;
+            $default_options['post_types'][esc_attr($type)] = null;
         }
     }
     return $default_options;

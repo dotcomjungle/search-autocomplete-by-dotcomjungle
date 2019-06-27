@@ -56,7 +56,6 @@ global $default_options;
 
 <!-- options for customization of awesomplete-->
     <?php
-
     $options = get_option('dcj_awes_options');
     if ($options === false || $options == '') {
         // defaults
@@ -64,16 +63,7 @@ global $default_options;
     };
     ?>
 
-
 <!-- awesomplete styles -->
-
-    <style>
-        #dcj_widget_search_form button[type="submit"],
-        #dcj_widget_search_form input[type="submit"] {
-            display: <?php if ($options['display_button'] == 'true') {echo "inline-block";}
-                                else {echo "none";}; ?>
-        }
-    </style>
 
     <?php
     if ($options['awes_theme_color'] == 'dark') {
@@ -90,27 +80,57 @@ global $default_options;
 
 <!-- simple js for awesomplete -->
     <script>
-        // get first text input in search form
-        let awesomplete_inputs_list = document.querySelectorAll(
-            '#dcj_widget_search_form input[type="text"], ' +
-            '#dcj_widget_search_form input[type="search"], ' +
-            '#dcj_widget_search_form input:not([type])'
-        );
-        let awesomplete_input = awesomplete_inputs_list[0];
-        // create awesomplete object
-        let awes = new Awesomplete(awesomplete_input, {
-            list: <?php echo json_encode($dcj_post_titles); ?>,
-            minChars: <?php echo $options['min_chars']; ?>,
-            maxItems: <?php echo $options['max_items']; ?>
-        });
+        {
+            function get_inputs() {
+                const id_no_num = "<?php echo preg_replace('/#.*/', '', $options['input_id']); ?>";
+                if (id_no_num === '') {
+                    // get first text input in search form
+                    let default_awesomplete_inputs = document.querySelectorAll(
+                        '#dcj_widget_search_form input[type="text"], ' +
+                        '#dcj_widget_search_form input[type="search"], ' +
+                        '#dcj_widget_search_form input:not([type])'
+                    );
+                    var awesomplete_inputs = [default_awesomplete_inputs[0]];
+                } else {
+                    // get all inputs starting with id stub
+                    var awesomplete_inputs = document.querySelectorAll('input[id^=' + id_no_num + ']');
+                }
+                return awesomplete_inputs;
+            }
 
-        // event listener for redirect to selected site
-        let awes_form_div = document.querySelector("div.awesomplete");
-        awes_form_div.addEventListener("awesomplete-selectcomplete", function () {
-            let title = awesomplete_input.value;
-            let title_to_url = <?php echo json_encode($dcj_title_to_urls); ?>;
-            window.location.href = title_to_url[title];
-        });
+            // create awesomplete object, add event listener for selection
+            function create_awes(awesomplete_input) {
+                let awes = new Awesomplete(awesomplete_input, {
+                    list: <?php echo json_encode($dcj_post_titles); ?>,
+                    minChars: <?php echo $options['min_chars']; ?>,
+                    maxItems: <?php echo $options['max_items']; ?>
+                });
+                let awes_form_div = awesomplete_input.closest('div.awesomplete');
+                awes_form_div.addEventListener("awesomplete-selectcomplete", function () {
+                    let title = awesomplete_input.value;
+                    let title_to_url = <?php echo json_encode($dcj_title_to_urls); ?>;
+                    window.location.href = title_to_url[title];
+                });
+            }
+
+            // for each input create awesomplete and style button
+            let awes_inputs = get_inputs();
+            for (i = 0; i < awes_inputs.length; i++) {
+                create_awes(awes_inputs[i]);
+                if ('<?php echo ($options['display_button']); ?>' === '') {
+                    let input_form = awes_inputs[i].closest('form');
+                    if (input_form.querySelector('div.awesomplete') !== null) {
+                        let submit_button = input_form.querySelector(
+                            'button[type="submit"], input[type="submit"]'
+                        );
+                        console.log("hhhhh");
+                        console.log(submit_button);
+                        submit_button.style.display = 'none';
+                    }
+                }
+            }
+        }
+
     </script>
 
 
