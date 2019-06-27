@@ -115,6 +115,7 @@ function dcj_awesomplete_options_page () {
             $options['max_items']           = max(array(absint($_POST['max_items']), 1));
             $options['min_chars']           = max(array(absint($_POST['min_chars']), 1));
             $options['input_id']            = preg_replace('/\s+/', '', esc_attr($_POST['input_id_select_1']));
+            $options['full_id']             = esc_attr($_POST['full_id']);
             $options['post_types']          = array();
             foreach (get_post_types(array('public' => true)) as $type) {
                 $type = esc_attr($type);
@@ -150,6 +151,7 @@ function dcj_awes_defaults() {
         'min_chars' => '2',
         'display_button' => 'true',
         'input_id' => '',
+        'full_id' => 'true'
     );
     // add current post types
     foreach (get_post_types(array('public' => true)) as $type) {

@@ -21,7 +21,7 @@ div.awesomplete > input {
 div.awesomplete > ul {
 	position: absolute ;
 	left: 0 ;
-	z-index: 1 ;
+	z-index: 7 !important;
 	min-width: 100% ;
 	box-sizing: border-box ;
 	list-style: none ;

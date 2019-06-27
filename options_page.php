@@ -114,39 +114,49 @@
                                         </td>
                                     </tr>
                                 </table>
-                                <table id="dcj_advanced_settings" style="display: none;">
+                                <div id="dcj_advanced_settings" style="display: none;">
+                                <table>
                                     <tr>
                                         <td>
-                                            <?php $input_id = $options['input_id']; ?>
                                             <label class="indent-pad" style="text-decoration: underline">Make All Search Boxes into DCJ Autocomplete Widgets</label>
                                             <br>
-
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <?php
+                                                $input_id = $options['input_id'];
+                                                $full_id = $options['full_id'];
+                                            ?>
                                             <label class="indent-pad" for="input_id_select_1">Input ID: </label>
-                                            <input type="text" id="input_id_select_1" name="input_id_select_1" autocomplete="off" value="<?php echo $input_id; ?>">
-                                            <br><br>
-
+                                            <input type="text" id="input_id_select_1" name="input_id_select_1" autocomplete="off" value="<?php echo $input_id; ?>"/>
+                                            &nbsp;
+                                            <input type="checkbox" id="full_id" name="full_id" value="true" <?php if ($full_id == 'true') {echo 'checked';}; ?>/>
+                                            <label for="full_id">There is no identifying number</label>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td>
                                             <label class="indent-pad">
                                                 <span class="indent-pad">
-                                                    Enter the CSS ID of your theme's search inputs. A '#' can be
+                                                    Enter the CSS ID of your theme's search inputs. If there is
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    substituted for the unique number possibly appearing on at the end
+                                                    a unique identifying number at the end of the id, add a '#' in its
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    of the ID. This ID can be found on most browsers by right-clicking
+                                                    place, and leave the box checked. This ID can be found on most
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    on the input box and selecting 'inspect element'. Practicing on the
+                                                    browsers by right-clicking on the input box and selecting 'inspect
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    above input for example would yield an ID of "input_id_select_#". If
+                                                    element'. Practicing on the above input for example would yield an
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    the ID is not very unique (i.e., "s"), it could cause problems in other
-                                                </span><br>
-                                                <span class="indent-pad">
-                                                    forms, and then this option is not recommended.
-                                                </span><br>
+                                                    ID of "input_id_select_#".
                                                 <span class="indent-pad">
                                                 </span><br>
                                             </label>
@@ -169,6 +179,7 @@
 
                                     <tr><td><br></td></tr>
                                 </table>
+                                </div> <!-- advanced settings end -->
                                 <table>
                                     <tr>
                                         <td>
@@ -192,30 +203,7 @@
                 <div class="meta-box-sortables">
                     <div class="postbox">
 
-                        <h2><span>
-                                About Dotcomjungle
-                            </span></h2>
-
-                        <div class="inside">
-                            <p>
-                                words words words
-                                description
-                            </p>
-                        </div>
-                        <!-- .inside -->
-                    </div>
-                    <!-- .postbox -->
-                </div>
-                <!-- .meta-box-sortables -->
-            </div>
-            <!-- #postbox-container-1 .postbox-container -->
-            <div id="postbox-container-1" class="postbox-container">
-                <div class="meta-box-sortables">
-                    <div class="postbox">
-
-                        <h2><span>
-                                About Dotcomjungle
-                            </span></h2>
+                        <h2>About Dotcomjungle</h2>
 
                         <div class="inside">
                             <p>

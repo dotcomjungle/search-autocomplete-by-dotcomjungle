@@ -93,7 +93,11 @@ global $default_options;
                     var awesomplete_inputs = [default_awesomplete_inputs[0]];
                 } else {
                     // get all inputs starting with id stub
-                    var awesomplete_inputs = document.querySelectorAll('input[id^=' + id_no_num + ']');
+                    if ('<?php echo $options["full_id"]; ?>' === 'true') {
+                        var awesomplete_inputs = document.querySelectorAll('input[id=' + id_no_num + ']');
+                    } else {
+                        var awesomplete_inputs = document.querySelectorAll('input[id^=' + id_no_num + ']');
+                    }
                 }
                 return awesomplete_inputs;
             }
@@ -123,8 +127,6 @@ global $default_options;
                         let submit_button = input_form.querySelector(
                             'button[type="submit"], input[type="submit"]'
                         );
-                        console.log("hhhhh");
-                        console.log(submit_button);
                         submit_button.style.display = 'none';
                     }
                 }
