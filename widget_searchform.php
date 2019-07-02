@@ -82,7 +82,7 @@ global $default_options;
     <script>
         {
             function get_inputs() {
-                const id_no_num = "<?php echo preg_replace('/#.*/', '', $options['input_id']); ?>";
+                const id_no_num = "<?php echo preg_replace('/#.*/', '', $options['input_name']); ?>";
                 if (id_no_num === '') {
                     // get first text input in search form
                     let default_awesomplete_inputs = document.querySelectorAll(
@@ -93,10 +93,10 @@ global $default_options;
                     var awesomplete_inputs = [default_awesomplete_inputs[0]];
                 } else {
                     // get all inputs starting with id stub
-                    if ('<?php echo $options["full_id"]; ?>' === 'true') {
-                        var awesomplete_inputs = document.querySelectorAll('input[id=' + id_no_num + ']');
+                    if ('<?php echo $options["full_name"]; ?>' === 'true') {
+                        var awesomplete_inputs = document.querySelectorAll('input[name=' + id_no_num + ']');
                     } else {
-                        var awesomplete_inputs = document.querySelectorAll('input[id^=' + id_no_num + ']');
+                        var awesomplete_inputs = document.querySelectorAll('input[name^=' + id_no_num + ']');
                     }
                 }
                 return awesomplete_inputs;

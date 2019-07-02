@@ -102,14 +102,14 @@
                                                 document.getElementById('hide_button').style.display = 'block';
                                                 document.getElementById('show_button').style.display = 'none';
                                                 document.getElementById('show_advanced').value = 'yes';
-                                            "><em id="show_button" style="display: block;">show</em></a>
+                                            "><em id="show_button" style="display: block;">&nbsp;show</em></a>
 
                                             <a onclick="
                                                 document.getElementById('dcj_advanced_settings').style.display = 'none';
                                                 document.getElementById('hide_button').style.display = 'none';
                                                 document.getElementById('show_button').style.display = 'block';
                                                 document.getElementById('show_advanced').value = 'no';
-                                            "><em id="hide_button" style="display: none;">hide</em></a>
+                                            "><em id="hide_button" style="display: none;">&nbsp;hide</em></a>
 
                                         </td>
                                     </tr>
@@ -125,14 +125,14 @@
                                     <tr>
                                         <td>
                                             <?php
-                                                $input_id = $options['input_id'];
-                                                $full_id = $options['full_id'];
+                                                $input_name = $options['input_name'];
+                                                $full_name = $options['full_name'];
                                             ?>
-                                            <label class="indent-pad" for="input_id_select_1">Input ID: </label>
-                                            <input type="text" id="input_id_select_1" name="input_id_select_1" autocomplete="off" value="<?php echo $input_id; ?>"/>
+                                            <label class="indent-pad" for="input_name_select_1">Input Name: </label>
+                                            <input type="text" id="input_name_select_1" name="input_name_select_1" autocomplete="off" value="<?php echo $input_name; ?>"/>
                                             &nbsp;
-                                            <input type="checkbox" id="full_id" name="full_id" value="true" <?php if ($full_id == 'true') {echo 'checked';}; ?>/>
-                                            <label for="full_id">There is no identifying number</label>
+                                            <input type="checkbox" id="full_name" name="full_name" value="true" <?php if ($full_name == 'true') {echo 'checked';}; ?>/>
+                                            <label for="full_name">There is no identifying number</label>
                                         </td>
                                     </tr>
                                 </table>
@@ -141,37 +141,36 @@
                                         <td>
                                             <label class="indent-pad">
                                                 <span class="indent-pad">
-                                                    Enter the CSS ID of your theme's search inputs. If there is
+                                                    Enter the CSS 'name' attribute of your theme's search inputs. If
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    a unique identifying number at the end of the id, add a '#' in its
+                                                    there is a unique identifying number at the end of the name, add a '#'
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    place, and leave the box checked. This ID can be found on most
+                                                    in its place, and leave the box checked. This name can be found on
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    browsers by right-clicking on the input box and selecting 'inspect
+                                                    most browsers by right-clicking on the input box and selecting
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    element'. Practicing on the above input for example would yield an
+                                                    'inspect element'. Practicing on the above input for example would
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    ID of "input_id_select_#".
+                                                    yield a name of "input_name_select_#".
                                                 <span class="indent-pad">
                                                 </span><br>
                                             </label>
 
                                             <label class="indent-pad">
                                                 <span class="indent-pad">
-                                                    Note: If Awesomplete is not working, it may
+                                                    Note: If Awesomplete is not working, it may not be linking to the
                                                 </span><br>
                                                 <span class="indent-pad">
-                                                    not be linking to the input correctly. This
+                                                    input correctly. This feature may fix it.
                                                 </span><br>
                                                 <span class="indent-pad">
                                                     feature may fix it.
                                                 </span><br><br>
-                                                <span class="indent-pad">
 
                                             </label>
                                         </td>
@@ -211,7 +210,7 @@
                                 description
                             </p>
                             <p>
-                                Learn more about us
+                                Learn more about us and what we can do for you and your Wordpress site
                                 <a href="https://www.dotcomjungle.com/wordpress-woocommerce-web-development/">
                                 here</a>!
                             </p>

@@ -86,13 +86,12 @@ function dcj_awesomplete_add_options() {
     // add_options_page( $page_title, $menu_title, $capability, $menu-slug, $function)
 
     add_options_page(
-        "Dotcomjungle's Awesomplete Search Widget",
-        'DCJ Awesomplete Search',
+        "Dotcomjungle's Autocomplete Search Widget",
+        'DCJ Autocomplete Search',
         'manage_options',
-        'dcj-awesomplete-options',
+        'dcj-Autocomplete-options',
         'dcj_awesomplete_options_page'
     );
-    //
 
 };
 
@@ -114,8 +113,8 @@ function dcj_awesomplete_options_page () {
             $options['display_button']      = esc_attr($_POST['display_button']);
             $options['max_items']           = max(array(absint($_POST['max_items']), 1));
             $options['min_chars']           = max(array(absint($_POST['min_chars']), 1));
-            $options['input_id']            = preg_replace('/\s+/', '', esc_attr($_POST['input_id_select_1']));
-            $options['full_id']             = esc_attr($_POST['full_id']);
+            $options['input_name']          = preg_replace('/\s+/', '', esc_attr($_POST['input_name_select_1']));
+            $options['full_name']           = esc_attr($_POST['full_name']);
             $options['post_types']          = array();
             foreach (get_post_types(array('public' => true)) as $type) {
                 $type = esc_attr($type);
@@ -135,7 +134,6 @@ function dcj_awesomplete_options_page () {
     };
 
     require('options_page.php');
-
 }
 
 add_action( 'admin_menu', 'dcj_awesomplete_add_options');
@@ -150,8 +148,8 @@ function dcj_awes_defaults() {
         'max_items' => '5',
         'min_chars' => '2',
         'display_button' => 'true',
-        'input_id' => '',
-        'full_id' => 'true'
+        'input_name' => '',
+        'full_name' => 'true'
     );
     // add current post types
     foreach (get_post_types(array('public' => true)) as $type) {
