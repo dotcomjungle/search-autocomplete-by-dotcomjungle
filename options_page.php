@@ -114,6 +114,7 @@
                                         </td>
                                     </tr>
                                 </table>
+
                                 <div id="dcj_advanced_settings" style="display: none;">
                                 <table>
                                     <tr>
@@ -138,47 +139,26 @@
                                 </table>
                                 <table>
                                     <tr>
-                                        <td>
-                                            <label class="indent-pad">
-                                                <span class="indent-pad">
-                                                    Enter the CSS 'name' attribute of your theme's search inputs. If
-                                                </span><br>
-                                                <span class="indent-pad">
-                                                    there is a unique identifying number at the end of the name, add a '#'
-                                                </span><br>
-                                                <span class="indent-pad">
-                                                    in its place, and leave the box checked. This name can be found on
-                                                </span><br>
-                                                <span class="indent-pad">
-                                                    most browsers by right-clicking on the input box and selecting
-                                                </span><br>
-                                                <span class="indent-pad">
-                                                    'inspect element'. Practicing on the above input for example would
-                                                </span><br>
-                                                <span class="indent-pad">
-                                                    yield a name of "input_name_select_#".
-                                                <span class="indent-pad">
-                                                </span><br>
-                                            </label>
-
-                                            <label class="indent-pad">
-                                                <span class="indent-pad">
-                                                    Note: If Awesomplete is not working, it may not be linking to the
-                                                </span><br>
-                                                <span class="indent-pad">
-                                                    input correctly. This feature may fix it.
-                                                </span><br>
-                                                <span class="indent-pad">
-                                                    feature may fix it.
-                                                </span><br><br>
-
-                                            </label>
+                                        <td style="max-width: 445px">
+                                            <p class="indent-pad">
+                                                &emsp; Enter the CSS 'name' attribute of your theme's search inputs. If
+                                                there is a unique identifying number at the end of the name, add a '#'
+                                                in its place, and uncheck the box. This name can be found on most
+                                                browsers by right-clicking on the input box and selecting 'inspect
+                                                element'. Practicing on the above input, for example, you would get
+                                                a name of "input_name_select_#".
+                                            </p>
+                                            <p class="indent-pad">
+                                                &emsp; Note: If the Autocomplete is not working, it may not be linking to the
+                                                input correctly. This feature may fix it.
+                                            </p>
                                         </td>
                                     </tr>
 
                                     <tr><td><br></td></tr>
                                 </table>
                                 </div> <!-- advanced settings end -->
+
                                 <table>
                                     <tr>
                                         <td>

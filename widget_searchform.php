@@ -4,7 +4,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
 global $dcj_awesomplete_plugin_url;
-global $default_options;
 
 ?>
 
@@ -20,7 +19,7 @@ global $default_options;
     } else {
         $query_post_types = array();
         foreach($options['post_types'] as $type => $on) {
-            if ($on == 'true') {
+            if ($on === 'true') {
                 array_push($query_post_types, $type);
             }
         }
@@ -54,7 +53,7 @@ global $default_options;
         <?php get_search_form(); ?>
     </div>
 
-<!-- options for customization of awesomplete-->
+<!-- get options for customization of awesomplete-->
     <?php
     $options = get_option('dcj_awes_options');
     if ($options === false || $options == '') {
@@ -66,9 +65,9 @@ global $default_options;
 <!-- awesomplete styles -->
 
     <?php
-    if ($options['awes_theme_color'] == 'dark') {
+    if ($options['awes_theme_color'] === 'dark') {
         $theme_sheet = 'awesomplete_dark.css';
-    } elseif ($options['awes_theme_color'] == 'grey') {
+    } elseif ($options['awes_theme_color'] === 'grey') {
         $theme_sheet = 'awesomplete_grey.css';
     } else {
         $theme_sheet = 'awesomplete_light.css';

@@ -73,23 +73,18 @@ function dcj_awesomplete_register_widgets() {
     register_widget( 'DCJ_Awesomplete_Widget' );
 }
 
+// regular widget output
 add_action( 'widgets_init', 'dcj_awesomplete_register_widgets' );
-
-
-
 
 
 
 function dcj_awesomplete_add_options() {
 
-    // use the add_options_page function
-    // add_options_page( $page_title, $menu_title, $capability, $menu-slug, $function)
-
     add_options_page(
         "Dotcomjungle's Autocomplete Search Widget",
         'DCJ Autocomplete Search',
         'manage_options',
-        'dcj-Autocomplete-options',
+        'dcj-autocomplete-options',
         'dcj_awesomplete_options_page'
     );
 
