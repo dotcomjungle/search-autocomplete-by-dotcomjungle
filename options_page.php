@@ -97,7 +97,7 @@
                                             <?php $show_advanced = esc_attr($_POST['show_advanced']); ?>
                                             <input type="hidden" id="show_advanced" name="show_advanced" value="<?php echo $show_advanced; ?>"/>
 
-                                            <a id="show_button_link" onclick="
+                                            <a onclick="
                                                 document.getElementById('dcj_advanced_settings').style.display = 'block';
                                                 document.getElementById('hide_button').style.display = 'block';
                                                 document.getElementById('show_button').style.display = 'none';
@@ -147,10 +147,6 @@
                                                 browsers by right-clicking on the input box and selecting 'inspect
                                                 element'. Practicing on the above input, for example, you would get
                                                 a name of "input_name_select_#".
-                                            </p>
-                                            <p class="indent-pad">
-                                                &emsp; Note: If the Autocomplete is not working, it may not be linking to the
-                                                input correctly. This feature may fix it.
                                             </p>
                                         </td>
                                     </tr>
@@ -235,10 +231,3 @@
     <!-- #poststuff -->
 </div> <!-- .wrap -->
 
-
-<?php if ($show_advanced === 'yes') { ?>
-    <script>
-        document.getElementById('show_button_link').click();
-        console.log("hi");
-    </script>
-<?php }; ?>

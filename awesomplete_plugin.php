@@ -24,10 +24,10 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 
             $widget_ops = array(
                 'classname'                   => 'dcj_awesomplete_widget',
-                'description'                 => __( "Dotcomjungle's Awesomplete Search Widget" ),
+                'description'                 => __( "Dotcomjungle's Autocomplete Search Widget" ),
                 'customize_selective_refresh' => true,
             );
-            parent::__construct( 'dcj_awesomplete_widget', _x( "Dotcomjungle's Awesomplete Search Widget", 'DCJs Autocomplete search widget powered by Awesomplete' ), $widget_ops );
+            parent::__construct( 'dcj_autocomplete_widget', _x( "Dotcomjungle's Autocomplete Search Widget", 'DCJs Autocomplete search widget powered by Awesomplete' ), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {
@@ -127,6 +127,11 @@ function dcj_awesomplete_options_page () {
     if ($options === false || $options == '') {
         $options = $default_options;
     };
+    foreach (get_post_types(array('public' => true)) as $type) {
+        if (! isset($options['post_types'][$type])) {
+            $options['post_types'][$type] = '';
+        }
+    }
 
     require('options_page.php');
 }
