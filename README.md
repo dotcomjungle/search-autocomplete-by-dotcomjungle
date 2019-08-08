@@ -4,7 +4,9 @@ Author: [Dotcomjungle Inc.](https://www.dotcomjungle.com/)
 License: MIT? __________
 Version: __________
 
-##### The gist:
+Version: 1.0
+
+##### About this plugin
 This plugin overrides HTML's (boring and uncustomizable) autofill feature with a
 pretty looking and highly functional alternative. It utilizes the basic functionality of
 Lea Verou's [Awesomplete](https://leaverou.github.io/awesomplete/), which is extended,
@@ -14,12 +16,10 @@ include:
 * Customizable color themes to match your sites themes
 * The ability to choose which post types will autofill
 
-...and more in development!
+##### About [Dotcomjungle](https://www.dotcomjungle.com/)
+When we're not contributing to open source, we're building and supporting tech-savvy marketing strategies for growing businesses through consultation and development.
 
-##### Who we are
-When we're not contributing to open source, [Dotcomjungle](https://www.dotcomjungle.com/)  builds and supports tech-savvy marketing strategies for growing businesses through consultation and development.
-
-## Documentation
+## Plugin Documentation
 
 #### Basic use
 Once the plugin is installed and activated, it is very easy to use. Under the admin
