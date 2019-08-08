@@ -1,6 +1,6 @@
 Dotcomjungle's Autocomplete Search Widget
 =========================================
-Author: [Dotcomjungle Inc.](https://www.dotcomjungle.com/)
+Author: [Dotcomjungle, Inc.](https://www.dotcomjungle.com/)
 
 License: [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
 
