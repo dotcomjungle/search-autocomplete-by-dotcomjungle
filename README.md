@@ -96,7 +96,7 @@ working as intended!
 
 ##### Contributing Code
 We welcome contributions and will review each Pull Request that is submitted. To make this 
-as quick a process as possible, please:
+as quick a process as possible, please do the following for each PR:
 * Start by ensuring there's an issue related to the code you're trying to submit. Whether 
 this issue is a bug or a feature request, having the issue will help provide context for the code in your PR.
 * Only touch files relevant to the issue in your PR. This reduces the time needed to review,
