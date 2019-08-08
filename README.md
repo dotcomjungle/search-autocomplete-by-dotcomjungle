@@ -17,7 +17,8 @@ include:
 * The ability to choose which post types will autofill
 
 ##### About [Dotcomjungle](https://www.dotcomjungle.com/)
-When we're not contributing to open source, we're building and supporting tech-savvy marketing strategies for growing businesses through consultation and development.
+When we're not contributing to open source, we're building and supporting tech-savvy 
+marketing strategies for growing businesses through consultation and development.
 
 ## Plugin Documentation
 
