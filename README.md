@@ -32,7 +32,7 @@ Once the plugin is installed and activated, you're ready to insert the basic wid
 tab 'Appearance' > 'Widgets', you will now see Dotcomjungle's Autocomplete Search Widget
 as an available widget, which can be dragged in to any widget area you like. It will
 appear very much the same as any regular search box your site may already have (if 
-it looks a little off, never fear, it can probably be fixed. See the 'Appearance' section 
+it looks a little off, never fear, it can probably be fixed. See the ['Appearance' section](#appearance) 
 below). However, when you search in it, a pop-up will appear with suggestions loaded 
 from the titles of your sites posts. Selecting one will redirect to that post, 
 otherwise searching will behave exactly like a regular search box
