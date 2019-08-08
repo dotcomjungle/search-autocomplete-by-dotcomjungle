@@ -1,8 +1,8 @@
 Dotcomjungle's Autocomplete Search Widget
 =========================================
 Author: [Dotcomjungle Inc.](https://www.dotcomjungle.com/)
-License: MIT? __________
-Version: __________
+
+License: [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
 
 Version: 1.0
 
