@@ -21,6 +21,12 @@ When we're not contributing to open source, we're building and supporting tech-s
 
 ## Plugin Documentation
 
+#### Installation
+
+One-click installation through the official WordPress Plugin Directory is coming soon. 
+In the meantime, clone this repo into your `{Site Root}/wp-content/plugins` folder. Then 
+go to your WordPress admin dashboard's Plugins page, and active "DCJ Autocomplete Search".
+
 #### Basic use
 Once the plugin is installed and activated, it is very easy to use. Under the admin
 tab 'Appearance' > 'Widgets', you will now see Dotcomjungle's Autocomplete Search Widget
