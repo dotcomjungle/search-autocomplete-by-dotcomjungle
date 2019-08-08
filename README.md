@@ -28,7 +28,7 @@ In the meantime, clone this repo into your `{Site Root}/wp-content/plugins` fold
 go to your WordPress admin dashboard's Plugins page, and active "DCJ Autocomplete Search".
 
 #### Basic use
-Once the plugin is installed and activated, it is very easy to use. Under the admin
+Once the plugin is installed and activated, you're ready to insert the basic widget. Under the admin
 tab 'Appearance' > 'Widgets', you will now see Dotcomjungle's Autocomplete Search Widget
 as an available widget, which can be dragged in to any widget area you like. It will
 appear very much the same as any regular search box your site may already have (if 
