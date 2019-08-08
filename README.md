@@ -17,8 +17,7 @@ include:
 ...and more in development!
 
 ##### Who we are
-blurb blurb blurb
-[Dotcomjungle Inc.](https://www.dotcomjungle.com/)
+When we're not contributing to open source, [Dotcomjungle](https://www.dotcomjungle.com/)  builds and supports tech-savvy marketing strategies for growing businesses through consultation and development.
 
 ## Documentation
 
