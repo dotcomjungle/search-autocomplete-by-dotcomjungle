@@ -82,7 +82,7 @@ with the details described below.
 
 ## Improving this Plugin
 
-#####Reporting Bugs
+##### Reporting Bugs
 If you're reporting a bug, please do so by filing an issue with these site details:
 * WordPress version
 * Active theme
@@ -94,7 +94,7 @@ If you're reporting a bug, please do so by filing an issue with these site detai
 Each detail will greatly help the person attempting to resolve the issue and get things 
 working as intended! 
 
-#####Contributing Code
+##### Contributing Code
 We welcome contributions and will review each Pull Request that is submitted. To make this 
 as quick a process as possible, please:
 * Start by ensuring there's an issue related to the code you're trying to submit. Whether 
