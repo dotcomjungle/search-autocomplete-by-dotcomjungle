@@ -5,10 +5,9 @@
  *	Plugin URI: https://www.dotcomjungle.com
  *	Description: Dotcomjungle's high power, low overhead autocomplete search widget. Highly customizable, it is powered by Lea Verou's 'Awesomplete' and built to work with any theme.
  *	Version: 1.0
- *	Author: Julian Rice
- *	Author URI: https://github.com/JRice15
- *	License: GPL2
- *
+ *	Author: Dotcomjungle
+ *	Author URI: https://www.dotcomjungle.com
+ *	License: GPLv3
 */
 
 
@@ -43,7 +42,7 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 		}
 
         // create actual searchform
-        require( 'widget_searchform.php' );
+        require('widget-searchform.php');
 
 		echo $args['after_widget'];
 
@@ -133,7 +132,7 @@ function dcj_awesomplete_options_page () {
         }
     }
 
-    require('options_page.php');
+    require('options-page.php');
 }
 
 add_action( 'admin_menu', 'dcj_awesomplete_add_options');

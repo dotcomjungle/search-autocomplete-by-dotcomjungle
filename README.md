@@ -1,12 +1,14 @@
 Dotcomjungle's Autocomplete Search Widget
 =========================================
+
 Author: [Dotcomjungle, Inc.](https://www.dotcomjungle.com/)
 
 License: [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
 
 Version: 1.0
 
-##### About this plugin
+
+##### About This Plugin
 This plugin overrides HTML's (boring and uncustomizable) autofill feature with a
 pretty looking and highly functional alternative. It utilizes 
 Lea Verou's excellent [Awesomplete](https://leaverou.github.io/awesomplete/) in a way that is optimized for WordPress and easy to customize. Dotcomjungle's Autocomplete Search Widget's features
@@ -27,7 +29,7 @@ One-click installation through the official WordPress Plugin Directory is coming
 In the meantime, clone this repo into your `{Site Root}/wp-content/plugins` folder. Then 
 go to your WordPress admin dashboard's Plugins page, and activate "DCJ Autocomplete Search".
 
-#### Basic use
+#### Basic Use
 Once the plugin is installed and activated, you're ready to insert the basic widget. Under the admin
 tab 'Appearance' > 'Widgets', you will now see Dotcomjungle's Autocomplete Search Widget
 as an available widget, which can be dragged in to any widget area you like. It will
