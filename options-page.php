@@ -182,6 +182,7 @@
 
                         <div class="inside">
                             <p>
+                                <?php // todo: was this meant to still be here? ?>
                                 words words words
                                 description
                             </p>

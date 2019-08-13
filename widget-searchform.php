@@ -20,6 +20,9 @@ global $dcj_awesomplete_plugin_url;
         $query_post_types = array();
         foreach($options['post_types'] as $type => $on) {
             if ($on === 'true') {
+                // todo: If adding elements one at a time it's better to use $query_post_types[] = $type;. Despite appearances,
+                // instead of overwriting the variable with the new value, the new value will be appended to the array. The net
+                // effect is the same, but [] is faster and more the norm in php.
                 array_push($query_post_types, $type);
             }
         }
@@ -39,6 +42,7 @@ global $dcj_awesomplete_plugin_url;
     // titles for awesomplete
     $dcj_post_titles = array();
     foreach( $dcj_post_id_array as $dcj_post_id ) {
+        // todo: Same as above. [] is preferred.
         array_push( $dcj_post_titles, get_the_title($dcj_post_id) );
     };
     // associative array for title to url
@@ -73,6 +77,9 @@ global $dcj_awesomplete_plugin_url;
         $theme_sheet = 'awesomplete_light.css';
     }
     ?>
+<?php
+    // todo: The wordpress way to include stylesheets: https://developer.wordpress.org/themes/basics/including-css-javascript/
+?>
     <link rel="stylesheet" href="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete_base.css'; ?>" />
     <link rel="stylesheet" href="<?php echo $dcj_awesomplete_plugin_url . 'inc/' . $theme_sheet; ?>" />
 
@@ -92,6 +99,9 @@ global $dcj_awesomplete_plugin_url;
                     var awesomplete_inputs = [default_awesomplete_inputs[0]];
                 } else {
                     // get all inputs starting with id stub
+                    // todo: I'm not a fan of using true/false string literals in PHP. Due to the sometimes bizarre
+                    // type juggling of the language they can lead to some confusing situations. However, it's
+                    // probably not worth changing at this point.
                     if ('<?php echo $options["full_name"]; ?>' === 'true') {
                         var awesomplete_inputs = document.querySelectorAll('input[name=' + id_no_num + ']');
                     } else {

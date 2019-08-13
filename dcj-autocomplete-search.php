@@ -26,6 +26,7 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
                 'description'                 => __( "Dotcomjungle's Autocomplete Search Widget" ),
                 'customize_selective_refresh' => true,
             );
+            // todo: _x looks like a typo to me.
             parent::__construct( 'dcj_autocomplete_widget', _x( "Dotcomjungle's Autocomplete Search Widget", 'DCJs Autocomplete search widget powered by Awesomplete' ), $widget_ops );
 	}
 
