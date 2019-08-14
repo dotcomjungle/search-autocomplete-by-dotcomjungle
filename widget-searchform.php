@@ -19,11 +19,8 @@ global $dcj_awesomplete_plugin_url;
     } else {
         $query_post_types = array();
         foreach($options['post_types'] as $type => $on) {
-            if ($on === 'true') {
-                // todo: If adding elements one at a time it's better to use $query_post_types[] = $type;. Despite appearances,
-                // instead of overwriting the variable with the new value, the new value will be appended to the array. The net
-                // effect is the same, but [] is faster and more the norm in php.
-                array_push($query_post_types, $type);
+            if ($on === 'yes') {
+                $query_post_types[] = $type;
             }
         }
     }
@@ -42,8 +39,7 @@ global $dcj_awesomplete_plugin_url;
     // titles for awesomplete
     $dcj_post_titles = array();
     foreach( $dcj_post_id_array as $dcj_post_id ) {
-        // todo: Same as above. [] is preferred.
-        array_push( $dcj_post_titles, get_the_title($dcj_post_id) );
+         $dcj_post_titles[] = get_the_title($dcj_post_id);
     };
     // associative array for title to url
     $dcj_title_to_urls = array();
@@ -70,18 +66,17 @@ global $dcj_awesomplete_plugin_url;
 
     <?php
     if ($options['awes_theme_color'] === 'dark') {
-        $theme_sheet = 'awesomplete_dark.css';
+        $theme_sheet = 'awesomplete_dark';
     } elseif ($options['awes_theme_color'] === 'grey') {
-        $theme_sheet = 'awesomplete_grey.css';
+        $theme_sheet = 'awesomplete_grey';
     } else {
-        $theme_sheet = 'awesomplete_light.css';
+        $theme_sheet = 'awesomplete_light';
     }
-    ?>
-<?php
-    // todo: The wordpress way to include stylesheets: https://developer.wordpress.org/themes/basics/including-css-javascript/
+
+    wp_enqueue_style('awesomplete_base', $dcj_awesomplete_plugin_url.'inc/awesomplete_base.css');
+    wp_enqueue_style($theme_sheet, $dcj_awesomplete_plugin_url.'inc/'.$theme_sheet.'.css');
+
 ?>
-    <link rel="stylesheet" href="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete_base.css'; ?>" />
-    <link rel="stylesheet" href="<?php echo $dcj_awesomplete_plugin_url . 'inc/' . $theme_sheet; ?>" />
 
 
 <!-- simple js for awesomplete -->
@@ -89,6 +84,7 @@ global $dcj_awesomplete_plugin_url;
         {
             function get_inputs() {
                 const id_no_num = "<?php echo preg_replace('/#.*/', '', $options['input_name']); ?>";
+                var awesomplete_inputs;
                 if (id_no_num === '') {
                     // get first text input in search form
                     let default_awesomplete_inputs = document.querySelectorAll(
@@ -96,16 +92,13 @@ global $dcj_awesomplete_plugin_url;
                         '#dcj_widget_search_form input[type="search"], ' +
                         '#dcj_widget_search_form input:not([type])'
                     );
-                    var awesomplete_inputs = [default_awesomplete_inputs[0]];
+                    awesomplete_inputs = [default_awesomplete_inputs[0]];
                 } else {
                     // get all inputs starting with id stub
-                    // todo: I'm not a fan of using true/false string literals in PHP. Due to the sometimes bizarre
-                    // type juggling of the language they can lead to some confusing situations. However, it's
-                    // probably not worth changing at this point.
-                    if ('<?php echo $options["full_name"]; ?>' === 'true') {
-                        var awesomplete_inputs = document.querySelectorAll('input[name=' + id_no_num + ']');
+                    if ('<?php echo $options["full_name"]; ?>' === 'yes') {
+                        awesomplete_inputs = document.querySelectorAll('input[name=' + id_no_num + ']');
                     } else {
-                        var awesomplete_inputs = document.querySelectorAll('input[name^=' + id_no_num + ']');
+                        awesomplete_inputs = document.querySelectorAll('input[name^=' + id_no_num + ']');
                     }
                 }
                 return awesomplete_inputs;
@@ -113,7 +106,7 @@ global $dcj_awesomplete_plugin_url;
 
             // create awesomplete object, add event listener for selection
             function create_awes(awesomplete_input) {
-                let awes = new Awesomplete(awesomplete_input, {
+                new Awesomplete(awesomplete_input, {
                     list: <?php echo json_encode($dcj_post_titles); ?>,
                     minChars: <?php echo $options['min_chars']; ?>,
                     maxItems: <?php echo $options['max_items']; ?>
