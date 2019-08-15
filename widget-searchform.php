@@ -106,6 +106,7 @@ wp_enqueue_style( $theme_sheet, $dcj_awesomplete_plugin_url . 'inc/' . $theme_sh
 
         // create awesomplete object, add event listener for selection
         function create_awes(awesomplete_input) {
+            awesomplete_input.setAttribute("placeholder", "<?php echo $options['placeholder']; ?>");
             new Awesomplete(awesomplete_input, {
                 list: <?php echo json_encode( $dcj_post_titles ); ?>,
                 minChars: <?php echo $options['min_chars']; ?>,

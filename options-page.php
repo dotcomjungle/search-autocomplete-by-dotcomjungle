@@ -34,6 +34,7 @@
 									$awes_theme     = $options['awes_theme_color'];
 									$awes_highlight = $options['highlight_color'];
 									$display        = $options['display_button'];
+									$placeholder    = $options['placeholder'];
 									?>
                                     <input type="hidden" name="dcj_awes_options_submitted" value="yes"/>
                                     <tr>
@@ -65,6 +66,17 @@
                                                    value="yes" <?php if ( $display == 'yes' ) {
 												echo 'checked';
 											}; ?>/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="placeholder_text" class="indent-pad">
+                                                Placeholder text
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <input id="placeholder_text" name="placeholder_text" type="text"
+                                                   value="<?php echo $placeholder; ?>"/>
                                         </td>
                                     </tr>
 

@@ -13,10 +13,13 @@ events, or anything else you choose.
 
 #### About This Plugin
 This plugin overrides standard HTML's (boring and uncustomizable) autofill feature with a
-pretty looking and highly functional alternative. It creates a search widget that autofills
-from the titles of products, blog posts, events, pages, or anything else you choose. 
-It utilizes Lea Verou's excellent [Awesomplete](https://leaverou.github.io/awesomplete/) 
-in a way that is optimized for WordPress and easy to customize. Search Autocomplete's 
+pretty looking and highly functional alternative. It is entirely free, super lightweight,
+easy to configure, and looks smooth. 
+
+Search Autocomplete by Dotcomjungle works by creating a search widget that autofills from 
+the titles of products, blog posts, events, pages, or anything else you choose. It 
+utilizes Lea Verou's excellent [Awesomplete](https://leaverou.github.io/awesomplete/)
+to a create smooth, fast, and customizable autofill functionality. Search Autocomplete's 
 features include:
 * Autocomplete that matches anywhere in the text
 * Customizable color themes to match your sites themes
@@ -27,7 +30,7 @@ Dotcomjungle partners with private and family-owned specialty manufacturers and 
 to grow and strengthen their businesses. By partnering with Dotcomjungle's expertise in 
 web development, systems integration, constraint elimination and project management, our 
 clients support their content savvy marketing departments to increase sales and strengthen 
-their businesses for long-term growth.  
+their businesses for long-term growth.
 
 We look across silos at large slices of your company so we can deliver smart, superior 
 web sites, systems and integrations that better help sales people sell, shipping people 
@@ -70,7 +73,9 @@ site's theme, and to not display the search button for the widget. This second o
 exists because, on certain themes such as the WordPress Twenty-Twelve theme, certain
 styling rules make it so that the search button is awkwardly pushed to the next line. 
 To avoid this, the button can be hidden entirely. This feature does not change the 
-functionality at all; pressing enter will search just like normal.
+functionality at all; pressing enter will search just like normal. In this case it is
+recommended to include some placeholder text (something like "Search..." or "Type
+something") to indicate the purpose of the box.
 
 ##### Functionality
 Here, you are able to choose which types of posts the autocomplete pop-up will get the
