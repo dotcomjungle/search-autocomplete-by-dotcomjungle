@@ -1,14 +1,13 @@
 <?php
 
 /*
- *	Plugin Name: DCJ Autocomplete Search
+ *	Plugin Name: Search Autocomplete by Dotcomjungle
  *	Plugin URI: https://www.dotcomjungle.com
- *	Description: Dotcomjungle's high power, low overhead autocomplete search widget. Highly customizable, it is powered by Lea Verou's 'Awesomplete' and built to work with any theme.
+ *	Description: A customizable search widget that autocompletes the titles of WooCommerce products, blog posts, events, or anything else you choose.
  *	Version: 1.0
- *	Author: Julian Rice
- *	Author URI: https://github.com/JRice15
- *	License: GPL2
- *
+ *	Author: Dotcomjungle
+ *	Author URI: https://www.dotcomjungle.com
+ *	License: GPLv3 or later
 */
 
 
@@ -24,10 +23,10 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 
             $widget_ops = array(
                 'classname'                   => 'dcj_awesomplete_widget',
-                'description'                 => __( "Dotcomjungle's Autocomplete Search Widget" ),
+                'description'                 => __( "Search Autocomplete by Dotcomjungle" ),
                 'customize_selective_refresh' => true,
             );
-            parent::__construct( 'dcj_autocomplete_widget', _x( "Dotcomjungle's Autocomplete Search Widget", 'DCJs Autocomplete search widget powered by Awesomplete' ), $widget_ops );
+            parent::__construct( 'dcj_autocomplete_widget', "Search Autocomplete by Dotcomjungle", $widget_ops );
 	}
 
 	function widget( $args, $instance ) {
@@ -43,7 +42,7 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 		}
 
         // create actual searchform
-        require( 'widget_searchform.php' );
+        require('widget-searchform.php');
 
 		echo $args['after_widget'];
 
@@ -81,8 +80,8 @@ add_action( 'widgets_init', 'dcj_awesomplete_register_widgets' );
 function dcj_awesomplete_add_options() {
 
     add_options_page(
-        "Dotcomjungle's Autocomplete Search Widget",
-        'DCJ Autocomplete Search',
+        "Search Autocomplete by Dotcomjungle",
+        'Search Autocomplete by Dotcomjungle',
         'manage_options',
         'dcj-autocomplete-options',
         'dcj_awesomplete_options_page'
@@ -133,7 +132,7 @@ function dcj_awesomplete_options_page () {
         }
     }
 
-    require('options_page.php');
+    require('options-page.php');
 }
 
 add_action( 'admin_menu', 'dcj_awesomplete_add_options');
@@ -146,15 +145,15 @@ function dcj_awes_defaults() {
         'highlight_color' => 'yellow',
         'post_types' => array(),
         'max_items' => '5',
-        'min_chars' => '2',
-        'display_button' => 'true',
+        'min_chars' => '1',
+        'display_button' => 'yes',
         'input_name' => '',
-        'full_name' => 'true'
+        'full_name' => 'yes'
     );
     // add current post types
     foreach (get_post_types(array('public' => true)) as $type) {
         if ($type === 'post' || $type === 'product') {
-            $default_options['post_types'][esc_attr($type)] = 'true';
+            $default_options['post_types'][esc_attr($type)] = 'yes';
         } else {
             $default_options['post_types'][esc_attr($type)] = null;
         }

@@ -6,21 +6,25 @@
         padding-left: 20px;
         margin: 0;
     }
+    .wrap .postbox td {
+        font-size: 13px;
+    }
 </style>
 
 <div class="wrap">
 
     <div id="icon-options-general" class="icon32"></div>
-    <h1 class="wp-heading-inline">Dotcomjungle's Autocomplete Search Widget</h1><br>
+    <h1 class="wp-heading-inline">Search Autocomplete by Dotcomjungle</h1><br>
 
     <div id="poststuff">
         <div id="post-body" class="metabox-holder columns-2">
             <!-- main content -->
-            <div id="post-body-content">
+            <div id="post-body-content" >
                 <div class="meta-box-sortables ui-sortable">
 
                     <div class="postbox">
-                    <!-- <h2><span style="text-decoration: underline">Options</span></h2>-->
+
+                        <!-- <h2><span style="text-decoration: underline">Options</span></h2>-->
                         <h4 style="padding-left: 12px">Appearance</h4>
 
                         <div class="inside">
@@ -38,9 +42,9 @@
                                         </td>
                                         <td>
                                             <select id="awes_theme_color" name="awes_theme_color">
-                                                <option value="light" <?php selected( $awes_theme, 'light', TRUE ); ?>>Light</option>
-                                                <option value="dark" <?php selected( $awes_theme, 'dark', TRUE ); ?>>Dark</option>
-                                                <option value="grey" <?php selected( $awes_theme, 'grey', TRUE ); ?>>Grey</option>
+                                                <option value="light" <?php selected( $awes_theme, 'light', true ); ?>>Light</option>
+                                                <option value="dark" <?php selected( $awes_theme, 'dark', true ); ?>>Dark</option>
+                                                <option value="grey" <?php selected( $awes_theme, 'grey', true ); ?>>Grey</option>
                                             </select><br>
                                         </td>
                                     </tr>
@@ -49,7 +53,7 @@
                                             <label for="display_button" class="indent-pad">Display 'Search' Button</label>
                                         </td>
                                         <td>
-                                            <input id="display_button" name="display_button" type="checkbox" value="true" <?php if ($display == 'true') {echo 'checked';}; ?>/>
+                                            <input id="display_button" name="display_button" type="checkbox" value="yes" <?php if ($display == 'yes') {echo 'checked';}; ?>/>
                                         </td>
                                     </tr>
 
@@ -64,7 +68,7 @@
                                         foreach ($post_types as $type => $on) { ?>
                                                 <tr>
                                                     <td style="text-indent: 40px; padding: 1px">
-                                                        <input id="<?php echo 'type_'.$type; ?>" name="<?php echo 'type_'.$type; ?>" type="checkbox" value="true" <?php if ($on == 'true') {echo 'checked';}; ?>/>
+                                                        <input id="<?php echo 'type_'.$type; ?>" name="<?php echo 'type_'.$type; ?>" type="checkbox" value="yes" <?php if ($on == 'yes') {echo 'checked';}; ?>/>
                                                         <label for="<?php echo 'type_'.$type; ?>"><?php echo ucfirst($type); ?></label>
                                                     </td>
                                                 </tr>
@@ -119,7 +123,7 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            <label class="indent-pad" style="text-decoration: underline">Make All Search Boxes into DCJ Autocomplete Widgets</label>
+                                            <label class="indent-pad" style="text-decoration: underline">Make All Search Boxes Autocomplete</label>
                                             <br>
                                         </td>
                                     </tr>
@@ -132,7 +136,7 @@
                                             <label class="indent-pad" for="input_name_select_1">Input Name: </label>
                                             <input type="text" id="input_name_select_1" name="input_name_select_1" autocomplete="off" value="<?php echo $input_name; ?>"/>
                                             &nbsp;
-                                            <input type="checkbox" id="full_name" name="full_name" value="true" <?php if ($full_name == 'true') {echo 'checked';}; ?>/>
+                                            <input type="checkbox" id="full_name" name="full_name" value="yes" <?php if ($full_name == 'yes') {echo 'checked';}; ?>/>
                                             <label for="full_name">There is no identifying number</label>
                                         </td>
                                     </tr>
@@ -160,6 +164,9 @@
                                         <td>
                                             <input class="button-primary" type="submit" name="dcj_options_submit" value="Save"/>
                                             <input class="button-secondary" type="submit" name="dcj_restore_defaults" value="Restore Defaults" />
+                                            &nbsp;
+                                            <a href="https://github.com/JRice15/awesomplete_plugin/blob/master/README.md" target="_blank" rel="noreferrer noopener">view documentation</a>
+
                                         </td>
                                     </tr>
                                 </table>
@@ -182,24 +189,49 @@
 
                         <div class="inside">
                             <p>
-                                words words words
-                                description
+                                <a href="https://www.dotcomjungle.com/wordpress-woocommerce-web-development/" target="_blank" rel="noreferrer noopener">
+                                Dotcomjungle</a> partners with private and family-owned specialty manufacturers and retailers
+                                to grow and strengthen their businesses. By partnering with Dotcomjungle's expertise in
+                                web development, systems integration, constraint elimination and project management, our
+                                clients support their content savvy marketing departments to increase sales and strengthen
+                                their businesses for long-term growth.<br><br>
+                                We look across silos at large slices of your company so we can deliver smart, superior web
+                                sites, systems and integrations that better help sales people sell, shipping people ship,
+                                and accounting people keep track. Your CxOs and Marketing Directors will understand what
+                                is being done, why it is being done and how to measure both our and your successes.<br><br>
+                                Sometimes our work leads us to build customized extensions for our client partners, which we
+                                love to share with the open source community, like this!
                             </p>
                             <p>
                                 Learn more about us and what we can do for you and your Wordpress site
-                                <a href="https://www.dotcomjungle.com/wordpress-woocommerce-web-development/">
+                                <a href="https://www.dotcomjungle.com/" target="_blank" rel="noreferrer noopener">
                                 here</a>!
                             </p>
                             <p>
-                                If you find a bug, or have a suggestion or comment, you may contact the developer
-                                <a href="mailto:julianrice@dotcomjungle.com?subject=[DCJ%20Search%20Plugin%20]">
-                                here</a>.
+                                If you find a bug, or have a suggestion or comment, file an issue
+                                <a href="https://github.com/JRice15/awesomplete_plugin/issues" target="_blank" rel="noreferrer noopener">here</a>
+                                and we will address it soon!
                             </p>
                         </div>
                         <!-- .inside -->
                     </div>
                     <!-- .postbox -->
 
+                    <div class="postbox">
+                        <h2>
+                            About This Plugin
+                        </h2>
+                        <div class="inside">
+                            <p>
+                                The Search Autocomplete Extension and Widget overrides Wordpress' standard autofill
+                                feature with a nicer looking and more functional alternative. It creates a search
+                                widget that autofills from the titles of WooCommerce products, blog posts, events,
+                                pages, or anything else you choose. For more information, documentation and support
+                                <a href="https://www.dotcomjungle.com/" target="_blank" rel="noreferrer noopener">
+                                please visit our website</a>.
+                            </p>
+                        </div>
+                    </div>
                     <div class="postbox">
 
                         <h2><span>
@@ -209,9 +241,9 @@
                         <div class="inside">
                             <p>
                                 Dotcomjungle's Autocomplete Search Widget is powered by Lea Verou's
-                                <a href="https://leaverou.github.io/awesomplete/">Awesomplete</a>,
+                                <a href="https://leaverou.github.io/awesomplete/" target="_blank" rel="noreferrer noopener">Awesomplete</a>,
                                 a simple yet high-powered javascript library. Awesomplete is distributed under
-                                the <a href="https://github.com/LeaVerou/awesomplete/blob/gh-pages/LICENSE">MIT
+                                the <a href="https://github.com/LeaVerou/awesomplete/blob/gh-pages/LICENSE" target="_blank" rel="noreferrer noopener">MIT
                                 License</a>.
                             </p>
                         </div>
