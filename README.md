@@ -1,5 +1,5 @@
 Search Autocomplete by Dotcomjungle
-=========================================
+===================================
 
 Author: [Dotcomjungle, Inc.](https://www.dotcomjungle.com/)
 
@@ -7,14 +7,14 @@ License: [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)
 
 Version: 1.0
 
-A customizable search widget that autocompletes the titles of WooCommerce products, blog posts, 
+A customizable search widget that autocompletes the titles of products, blog posts, 
 events, or anything else you choose.
 
 
-##### About This Plugin
+#### About This Plugin
 This plugin overrides standard HTML's (boring and uncustomizable) autofill feature with a
 pretty looking and highly functional alternative. It creates a search widget that autofills
-from the titles of WooCommerce products, blog posts, events, pages, or anything else you choose. 
+from the titles of products, blog posts, events, pages, or anything else you choose. 
 It utilizes Lea Verou's excellent [Awesomplete](https://leaverou.github.io/awesomplete/) 
 in a way that is optimized for WordPress and easy to customize. Search Autocomplete's 
 features include:
@@ -22,15 +22,24 @@ features include:
 * Customizable color themes to match your sites themes
 * The ability to choose which post types will autofill
 
-##### About [Dotcomjungle](https://www.dotcomjungle.com/)
-When we're not contributing to open source, we're building and supporting tech-savvy 
-marketing strategies for growing businesses through consultation and development.
+#### About [Dotcomjungle](https://www.dotcomjungle.com/)
+Dotcomjungle partners with private and family-owned specialty manufacturers and retailers 
+to grow and strengthen their businesses. By partnering with Dotcomjungle's expertise in 
+web development, systems integration, constraint elimination and project management, our 
+clients support their content savvy marketing departments to increase sales and strengthen 
+their businesses for long-term growth.  
+
+We look across silos at large slices of your company so we can deliver smart, superior 
+web sites, systems and integrations that better help sales people sell, shipping people 
+ship, and accounting people keep track. Your CxOs and Marketing Directors will understand 
+what is being done, why it is being done and how to measure both our and your successes.
 
 ## Plugin Documentation
 
 #### Installation
-1. Install the plugin through the WordPress plugin-install screen directly in the site, or upload 
-the uncompressed folder `dcj-autocomplete-search` to the directory `{Site Root}/wp-content/plugins/`
+1. Install the plugin through the WordPress plugin-install screen directly in the site (recommended 
+method), or download the latest release of this project from this GitHub and upload the 
+uncompressed folder `dcj-autocomplete-search` to the directory `{Site Root}/wp-content/plugins/`
 2. Activate 'Search Autocomplete by Dotcomjungle' through the 'Plugins' screen in WordPress
 3. Use the 'Settings' > 'Search Autocomplete by Dotcomjungle' screen to configure the plugin
 4. Under the 'Appearance' > 'Widgets' admin section, you may use the standard Wordpress widget methods
@@ -49,7 +58,7 @@ from the titles of your sites posts, products, pages, or whatever you select in 
 [Functionality](#functionality) below). Selecting one of these dropdown options will redirect to that post, 
 otherwise searching will behave exactly like a regular search box.
 
-### Customizing
+#### Customizing
 To customize the widget's appearance and functionality, head over to 'Search Autocomplete 
 by Dotcomjungle' under the 'Settings' tab of the admin sidebar. If, at any time, you want to reset
 settings to their original values, you can select 'Restore Defaults' at the bottom and
@@ -94,8 +103,8 @@ with the details described below.
 
 ## Improving this Plugin
 
-##### Reporting Bugs
-If you're reporting a bug, please do so by filing an issue on the with these site details:
+#### Reporting Bugs
+If you're reporting a bug, please do so by filing an issue on this GitHub with these site details:
 * WordPress version
 * Active theme
 * Active plugins
@@ -106,7 +115,7 @@ If you're reporting a bug, please do so by filing an issue on the with these sit
 Each detail will greatly help the person attempting to resolve the issue and get things 
 working as intended!
 
-##### Contributing Code
+#### Contributing Code
 We welcome contributions and will review each Pull Request that is submitted. To make this 
 as quick a process as possible, please do the following for each PR:
 * Start by ensuring there's an issue related to the code you're trying to submit. Whether 
