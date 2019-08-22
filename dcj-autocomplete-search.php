@@ -5,7 +5,7 @@
  *    Plugin URI: https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle
  *    Description: A customizable search widget that autocompletes the titles of products, blog posts, events, or anything else you choose.
  *    Version: 1.0
- *    Author: Dotcomjungle, Inc.
+ *    Author: Dotcomjungle
  *    Author URI: https://www.dotcomjungle.com
  *    License: GPLv3 or later
  *
@@ -191,3 +191,4 @@ function dcj_awes_defaults() {
 
 	return $default_options;
 }
+

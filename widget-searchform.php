@@ -4,7 +4,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
 global $dcj_awesomplete_plugin_url;
-
 ?>
 
 <script src="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete.js'; ?>"></script>
@@ -66,17 +65,19 @@ if ( $options === false || $options == '' ) {
 
 <?php
 if ( $options['awes_theme_color'] === 'dark' ) {
-	$theme_sheet = 'awesomplete_dark';
+	$theme_sheet = 'inc/awesomplete_dark.css';
 } elseif ( $options['awes_theme_color'] === 'grey' ) {
-	$theme_sheet = 'awesomplete_grey';
+	$theme_sheet = 'inc/awesomplete_grey.css';
 } else {
-	$theme_sheet = 'awesomplete_light';
+	$theme_sheet = 'inc/awesomplete_light.css';
 }
 
 wp_enqueue_style( 'awesomplete_base', $dcj_awesomplete_plugin_url . 'inc/awesomplete_base.css' );
-wp_enqueue_style( $theme_sheet, $dcj_awesomplete_plugin_url . 'inc/' . $theme_sheet . '.css' );
+wp_enqueue_style( $theme_sheet, $dcj_awesomplete_plugin_url . $theme_sheet );
 
 ?>
+
+
 
 
 <!-- simple js for awesomplete -->

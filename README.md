@@ -7,7 +7,7 @@ License: [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)
 
 Version: 1.0
 
-A customizable search widget that autocompletes the titles of products, blog posts, 
+A customizable Wordpress search widget that autocompletes the titles of products, blog posts, 
 events, or anything else you choose.
 
 
@@ -79,7 +79,7 @@ something") to indicate the purpose of the box.
 
 ##### Functionality
 Here, you are able to choose which types of posts the autocomplete pop-up will get the
-titles from. This list is programatically generated, so it you add a new post type, such 
+titles from. This list is programmatically generated, so if you add a new post type, such 
 as 'Events,' it will appear here. By default only 'Post' and 'Product' (if it exists) are
 selected. Below that, two number inputs allow you to customize how and when the autocomplete
 box will appear.
@@ -103,13 +103,15 @@ numbers in it, like the '3' in the above example, replace them with a '#' charac
 uncheck the box; otherwise leave it checked. In this case you would enter 'example-name-#'.
 
 This feature is not failsafe, and depends on your site's theme playing nicely with it. If
-autcomplete boxes start to pop up in places like comments or elsewhere, please file an issue 
+autocomplete boxes start to pop up in places like comments or elsewhere, please file an issue 
 with the details described below.
 
 ## Improving this Plugin
 
 #### Reporting Bugs
-If you're reporting a bug, please do so by filing an issue on this GitHub with these site details:
+If you're reporting a bug, please do so by 
+[filing an issue](https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/issues) 
+on this GitHub with these site details:
 * WordPress version
 * Active theme
 * Active plugins
@@ -130,8 +132,9 @@ this issue is a bug or a feature request, having the issue will help provide con
  
  
  ## Misc.
- > Why are there two files titled 'readme'?
+ > Why are there three files titled 'readme'?
  
  This one, 'README.md' is for github. 'readme.txt' is used by Wordpress when
- the plugin is uploaded to the Wordpress plugin directory. Other than the slight
- formatting differences, they should be kept just about the same.
+ the plugin is uploaded to the Wordpress plugin directory. 'readme-for-dcj-site' is
+ for the documentation that is hosted on [our own website](https://www.dotcomjungle.com/).
+ Other than the slight formatting differences, they should all be kept just about the same.

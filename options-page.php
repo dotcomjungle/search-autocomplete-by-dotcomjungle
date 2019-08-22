@@ -1,4 +1,7 @@
-<?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
+<?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
+global $dcj_awesomplete_plugin_url;
+?>
 
 
 <style>
@@ -11,6 +14,7 @@
         font-size: 13px;
     }
 </style>
+
 
 <div class="wrap">
 
@@ -25,10 +29,9 @@
 
                     <div class="postbox">
 
-                        <h4 style="padding-left: 12px">Appearance</h4>
-
                         <div class="inside">
                             <form name="dcj_awes_options_form" method="post" action="">
+                                <h4>Appearance</h4>
                                 <table>
 									<?php
 									$awes_theme     = $options['awes_theme_color'];
@@ -252,12 +255,6 @@
                                 <a href="https://www.dotcomjungle.com/" target="_blank" rel="noreferrer noopener">
                                     here</a>!
                             </p>
-                            <p>
-                                If you find a bug, or have a suggestion or comment, file an issue
-                                <a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/issues"
-                                   target="_blank" rel="noreferrer noopener">here</a>
-                                and we will address it soon!
-                            </p>
                         </div>
                         <!-- .inside -->
                     </div>
@@ -267,13 +264,28 @@
                         </h2>
                         <div class="inside">
                             <p>
-                                The Search Autocomplete Extension and Widget overrides Wordpress' standard autofill
+                                Search Autocomplete is an extension and widget overrides Wordpress' standard autofill
                                 feature with a nicer looking and more functional alternative. It creates a search
                                 widget that autofills from the titles of products, blog posts, events,
-                                pages, or anything else you choose. For more information, documentation and support
+                                pages, or anything else you choose. For more information, documentation, and support
                                 <a href="https://www.dotcomjungle.com/" target="_blank" rel="noreferrer noopener">
                                     please visit our website</a>.
                             </p>
+                            <p>
+                                If you find a bug, or have a suggestion or comment,
+                                <a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/issues"
+                                   target="_blank" rel="noreferrer noopener">file an issue</a>
+                                and we will address it soon. Please include the following info when reporting a bug,
+                                in order to help us better address the problem:
+                            </p>
+                            <ul class="indent-pad" style="list-style-type:disc;">
+                                <li>WordPress version</li>
+                                <li>Active theme</li>
+                                <li>Active plugins</li>
+                                <li>Your current Search Autocomplete settings</li>
+                                <li>What you expect to happen</li>
+                                <li>A screenshot of what is actually happening</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="postbox">
