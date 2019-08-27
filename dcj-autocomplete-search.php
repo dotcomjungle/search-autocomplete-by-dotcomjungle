@@ -93,10 +93,6 @@ function dcj_awesomplete_add_options() {
 	);
 
 }
-
-;
-
-
 // output options page
 function dcj_awesomplete_options_page() {
 
@@ -163,6 +159,28 @@ function dcj_awes_plugin_action_links( $original_links ) {
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'dcj_awes_plugin_action_links', 10, 1 );
 
 
+// enqueue awesomplete scripts and styles
+function dcj_awes_enqueue_scripts() {
+	global $dcj_awesomplete_plugin_url;
+	// js
+	wp_enqueue_script( 'dcj_awesomplete_js', $dcj_awesomplete_plugin_url . 'inc/awesomplete.js' );
+
+	// css
+	$options = get_option( 'dcj_awes_options' );
+	if ( empty( $options ) ) {
+		$options = dcj_awes_defaults();
+	};
+	if ( $options['awes_theme_color'] === 'dark' ) {
+		$theme_sheet = 'inc/awesomplete_dark.css';
+	} elseif ( $options['awes_theme_color'] === 'grey' ) {
+		$theme_sheet = 'inc/awesomplete_grey.css';
+	} else {
+		$theme_sheet = 'inc/awesomplete_light.css';
+	}
+	wp_enqueue_style( 'dcj_awesomplete_style_base', $dcj_awesomplete_plugin_url . 'inc/awesomplete_base.css' );
+	wp_enqueue_style( 'dcj_awesomplete_style_theme', $dcj_awesomplete_plugin_url . $theme_sheet );
+}
+add_action('wp_enqueue_scripts', 'dcj_awes_enqueue_scripts');
 
 
 

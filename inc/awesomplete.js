@@ -358,10 +358,11 @@
 
     _.CONTAINER = function (input) {
         return $.create("div", {
+            id: "awesomplete",
             className: "awesomplete",
             around: input
         });
-    }
+    };
 
     _.ITEM = function (text, input, item_id) {
         var html = input.trim() === "" ? text : text.replace(RegExp($.regExpEscape(input.trim()), "gi"), "<mark>$&</mark>");

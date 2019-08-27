@@ -3,17 +3,9 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 
-global $dcj_awesomplete_plugin_url;
-?>
-
-<script src="<?php echo $dcj_awesomplete_plugin_url . 'inc/awesomplete.js'; ?>"></script>
-
-
-<!-- getting post titles and urls  -->
-<?php
 // get admin options for what post types to have awesomplete access
 $options = get_option( 'dcj_awes_options' );
-if ( $options === false || $options == '' ) {
+if ( empty( $options ) ) {
 	$query_post_types = dcj_awes_defaults()['post_types'];
 } else {
 	$query_post_types = array();
@@ -24,13 +16,13 @@ if ( $options === false || $options == '' ) {
 	}
 }
 
-// query for your post type
+// query for selected post types
 $dcj_post_type_query = new WP_Query( array(
 		'post_type'      => $query_post_types,
 		'posts_per_page' => - 1
 	)
 );
-// we need the array of posts
+// get the posts
 $dcj_posts_array = $dcj_post_type_query->posts;
 // get IDs, add to master array
 $dcj_post_id_array = wp_list_pluck( $dcj_posts_array, 'ID' );
@@ -52,35 +44,16 @@ foreach ( $dcj_post_id_array as $dcj_post_id ) {
 	<?php get_search_form(); ?>
 </div>
 
-<!-- get options for customization of awesomplete-->
 <?php
+// customization options
 $options = get_option( 'dcj_awes_options' );
-if ( $options === false || $options == '' ) {
+if ( empty( $options ) ) {
 	// defaults
 	$options = dcj_awes_defaults();
 };
 ?>
 
-<!-- awesomplete styles -->
-
-<?php
-if ( $options['awes_theme_color'] === 'dark' ) {
-	$theme_sheet = 'inc/awesomplete_dark.css';
-} elseif ( $options['awes_theme_color'] === 'grey' ) {
-	$theme_sheet = 'inc/awesomplete_grey.css';
-} else {
-	$theme_sheet = 'inc/awesomplete_light.css';
-}
-
-wp_enqueue_style( 'awesomplete_base', $dcj_awesomplete_plugin_url . 'inc/awesomplete_base.css' );
-wp_enqueue_style( $theme_sheet, $dcj_awesomplete_plugin_url . $theme_sheet );
-
-?>
-
-
-
-
-<!-- simple js for awesomplete -->
+<!-- js to instantiate awesomplete -->
 <script>
     {
         function get_inputs() {

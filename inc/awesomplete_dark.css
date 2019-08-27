@@ -1,39 +1,39 @@
-div.awesomplete > ul {
+div#awesomplete.awesomplete > ul {
     background: #0e0e0e !important;
     background: linear-gradient(to bottom right, hsla(0, 0%, 6%, 0.97), #0e0e0e) !important;
 }
 
 /* Pointer */
-div.awesomplete > ul:before {
+div#awesomplete.awesomplete > ul:before {
     background: hsla(0, 0%, 6%, 0.9) !important;
     background: linear-gradient(135deg, hsla(0, 0%, 6%, 0.9) 52%, hsla(0, 0%, 6%, 0) 52%) !important;
 }
 
-div.awesomplete > ul > li {
+div#awesomplete.awesomplete > ul > li {
     color: white !important;
     border-color: #404040 !important;
 }
 
-div.awesomplete > ul > li:hover {
+div#awesomplete.awesomplete > ul > li:hover {
     background: hsl(205, 10%, 23%) !important;
     color: white !important;
 }
 
-div.awesomplete > ul > li[aria-selected="true"] {
+div#awesomplete.awesomplete > ul > li[aria-selected="true"] {
     background: hsl(206, 40%, 24%) !important;
     color: white !important;
 }
 
-div.awesomplete mark {
+div#awesomplete.awesomplete mark {
     background: hsl(65, 100%, 17%) !important;
     color: white !important;
 }
 
-div.awesomplete li:hover mark {
+div#awesomplete.awesomplete li:hover mark {
     background: hsl(66, 100%, 15%) !important;
 }
 
-div.awesomplete li[aria-selected="true"] mark {
+div#awesomplete.awesomplete li[aria-selected="true"] mark {
     background: hsl(73, 100%, 15%) !important;
     color: inherit !important;
 }
