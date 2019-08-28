@@ -1,6 +1,3 @@
-License: [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)
-Version: 1.0
-
 A customizable Wordpress search widget that autocompletes the titles of products, blog posts, 
 events, or anything else you choose.
 
@@ -18,6 +15,10 @@ features include:
 * Autocomplete that matches anywhere in the text
 * Customizable color themes to match your sites themes
 * The ability to choose which post types will autofill
+
+#### Specifications
+License: [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)
+Latest Version: 1.0
 
 ## Plugin Documentation
 
@@ -100,27 +101,8 @@ with the details described below.
 
 ## Improving this Plugin
 
-#### Reporting Bugs
-If you're reporting a bug, please do so by 
-[filing an issue](https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/issues) 
-on this project's GitHub page with these site details:
-* WordPress version
-* Active theme
-* Active plugins
-* Your current Search Autocomplete settings
-* What you expect to happen
-* A screenshot of what is actually happening
-
-Each detail will greatly help the person attempting to resolve the issue and get things 
-working as intended!
-
-#### Contributing Code
-We welcome contributions to the [GitHub](https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle)
-for this project, and will review each Pull Request that is submitted. To make this
-as quick a process as possible, please do the following for each PR:
-* Start by ensuring there's an issue related to the code you're trying to submit. Whether 
-this issue is a bug or a feature request, having the issue will help provide context for the code in your PR.
-* Only touch files relevant to the issue in your PR. This reduces the time needed to review,
- and helps to prevent merge conflicts.
+To report a bug, or contribute code to this project, visit the 
+[GitHub](https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle#improving-this-plugin)
+for this project.
  
  

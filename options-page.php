@@ -314,7 +314,7 @@ global $dcj_awesomplete_plugin_url;
                         <div class="inside">
                             <h4>Reporting Bugs</h4>
                             <p>
-                                If you find a bug, or have a suggestion or comment,
+                                If you find a bug,
                                 <a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/issues"
                                    target="_blank" rel="noreferrer noopener">file an issue</a>
                                 and we will address it soon. Please include the following info when reporting a bug,

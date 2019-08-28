@@ -195,6 +195,7 @@
         open: function () {
             this.input.setAttribute("aria-expanded", "true");
             this.ul.removeAttribute("hidden");
+            this.ul.scrollTop = 0;
             this.pointer.removeAttribute("hidden");
             this.isOpened = true;
 

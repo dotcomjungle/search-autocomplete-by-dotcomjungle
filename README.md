@@ -143,7 +143,8 @@ this issue is a bug or a feature request, having the issue will help provide con
 ## Misc.
 > Why are there three files titled 'readme'?
 
-This one, 'README.md' is for github. 'readme.txt' is used by Wordpress when
-the plugin is uploaded to the Wordpress plugin directory. 'readme-for-dcj-site' is
+This one, 'README.md' is for github. 'readme-for-dcj-site' is
 for the documentation that is hosted on [our own website](https://www.dotcomjungle.com/).
-Other than the slight formatting differences, they should all be kept just about the same.
+Other than the slight formatting differences, those two should all be kept just about the same.
+'readme.txt' is used by Wordpress when the plugin is uploaded to the Wordpress plugin directory,
+and is more stripped-down.

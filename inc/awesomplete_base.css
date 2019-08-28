@@ -41,15 +41,17 @@ div.awesomplete[id^="awesomplete_container"] > ul {
     text-shadow: none !important;
 }
 
-@supports (transform: scale(0)) {
+@supports (transform: scale(0)) or (-moz-transform: scale(0)) {
     div.awesomplete[id^="awesomplete_container"] > ul {
         transition: .3s cubic-bezier(.4, .2, .5, 1.4) !important;
+        -moz-transform-origin: 1.43em -.43em !important;
         transform-origin: 1.43em -.43em !important;
     }
 
     div.awesomplete[id^="awesomplete_container"] > ul[hidden],
     div.awesomplete[id^="awesomplete_container"] > ul:empty {
         opacity: 0 !important;
+        -moz-transform: scale(0) !important;
         transform: scale(0) !important;
         display: block !important;
         transition-timing-function: ease !important;
@@ -62,6 +64,7 @@ div.awesomplete[id^="awesomplete_container"] > ul {
 
     div.awesomplete[id^="awesomplete_container"] > div.awesomplete_pointer[hidden] {
         opacity: 0 !important;
+        -moz-transform: scale(0) !important;
         transform: scale(0) !important;
         display: block !important;
         transition-timing-function: cubic-bezier(0.0, 0.75, 0.45, 1.0) !important;
@@ -80,6 +83,7 @@ div.awesomplete[id^="awesomplete_container"] > div.awesomplete_pointer {
     border-right: 0 !important;
     border-bottom: 0 !important;
     -webkit-transform: rotate(45deg) !important;
+    -ms-transform: rotate(45deg) !important;
     transform: rotate(45deg) !important;
     z-index: 6;
     box-shadow: 0.25em 0.25em .6em 0.2em rgba(0, 0, 0, 0.4) !important;
