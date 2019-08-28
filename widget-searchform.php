@@ -53,7 +53,6 @@ if ( empty( $options ) ) {
 };
 ?>
 
-<!-- js to instantiate awesomplete -->
 <script>
     {
         function get_inputs() {
@@ -78,13 +77,18 @@ if ( empty( $options ) ) {
             return awesomplete_inputs;
         }
 
-        // create awesomplete object, add event listener for selection
+// create awesomplete object, add event listener for selection
         function create_awes(awesomplete_input) {
             awesomplete_input.setAttribute("placeholder", "<?php echo $options['placeholder']; ?>");
             new Awesomplete(awesomplete_input, {
                 list: <?php echo json_encode( $dcj_post_titles ); ?>,
                 minChars: <?php echo $options['min_chars']; ?>,
-                maxItems: <?php echo $options['max_items']; ?>
+                maxItems: <?php echo $options['max_items']; ?>,
+                sort: function(a, b) {
+                    // sort by number of matches
+                    // returns negative for a, positive for b
+                    return b.split(b.inpt).length - a.split(a.inpt).length
+                }
             });
             let awes_form_div = awesomplete_input.closest('div.awesomplete');
             awes_form_div.addEventListener("awesomplete-selectcomplete", function () {
@@ -94,7 +98,7 @@ if ( empty( $options ) ) {
             });
         }
 
-        // for each input create awesomplete and style button
+// for each input create awesomplete and style button
         let awes_inputs = get_inputs();
         for (i = 0; i < awes_inputs.length; i++) {
             create_awes(awes_inputs[i]);

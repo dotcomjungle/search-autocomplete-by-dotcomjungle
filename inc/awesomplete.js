@@ -309,7 +309,7 @@
 
                 this.suggestions = this._list
                     .map(function (item) {
-                        return new Suggestion(me.data(item, value));
+                        return new Suggestion(me.data(item, value), value);
                     })
                     .filter(function (item) {
                         return me.filter(item, value);
@@ -392,13 +392,14 @@
 
 // Private functions
 
-    function Suggestion(data) {
+    function Suggestion(data, inpt = null) {
         var o = Array.isArray(data)
             ? {label: data[0], value: data[1]}
             : typeof data === "object" && "label" in data && "value" in data ? data : {label: data, value: data};
 
         this.label = o.label || o.value;
         this.value = o.value;
+        this.inpt = inpt;
     }
 
     Object.defineProperty(Suggestion.prototype = Object.create(String.prototype), "length", {

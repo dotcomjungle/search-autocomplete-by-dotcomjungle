@@ -68,7 +68,15 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
 		$title    = esc_attr( $instance['title'] );
 
-		require( 'widget-fields.php' );
+		// for titling in backend ?>
+        <body>
+        <p>
+            <label>Title</label>
+            <input class="widefat" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text"
+                   value="<?php echo $title; ?>"/>
+        </p>
+        <body>
+		<?php
 
 	}
 }
