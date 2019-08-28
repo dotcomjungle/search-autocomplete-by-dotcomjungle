@@ -26,21 +26,33 @@ global $dcj_awesomplete_plugin_url;
             <!-- main content -->
             <div id="post-body-content" style="width: 62%">
                 <div class="meta-box-sortables ui-sortable">
-
                     <div class="postbox">
+                        <h2>
+                            About This Plugin
+                        </h2>
+                        <div class="inside">
+                            <p>
+                                Search Autocomplete is an extension and widget overrides Wordpress' standard autofill
+                                feature with a nicer looking and more functional alternative. It creates a search
+                                widget that autofills from the titles of products, blog posts, events,
+                                pages, or anything else you choose.
+                            </p>
+                            <em>For information and help
+                                <a href="https://www.dotcomjungle.com/search-autocomplete-extension-for-wordpress/"
+                                   target="_blank" rel="noreferrer noopener">visit the documentation</a>
+                            </em>
+                        </div>
+                    </div>
+                    <div class="postbox">
+
+                        <h2>Settings</h2>
 
                         <div class="inside">
                             <form name="dcj_awes_options_form" method="post" action="">
-                                <table style="width: 100%">
+                                <table>
                                     <tr>
                                         <td>
-                                            <h4 style="margin-top: 4px; margin-bottom: 4px">Appearance</h4>
-                                        </td>
-                                        <td style="width: max-content; text-align: right">
-                                            <em>For more information
-                                                <a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/blob/master/README.md"
-                                                   target="_blank" rel="noreferrer noopener">visit the documentation</a>
-                                            </em>
+                                            <h4 style="margin-top: 0">Appearance</h4>
                                         </td>
                                     </tr>
                                 </table>
@@ -90,9 +102,7 @@ global $dcj_awesomplete_plugin_url;
                                         </td>
                                         <td>
                                             <input type="number" name="max_height" id="max_height" min="0" step="1"
-                                                   value="<?php echo $max_height; ?>"/>
-                                        </td>
-                                        <td>
+                                                   style="max-width: 70px" value="<?php echo $max_height; ?>"/>
                                             Pixels
                                         </td>
                                     </tr>
@@ -280,19 +290,29 @@ global $dcj_awesomplete_plugin_url;
                         </div>
                         <!-- .inside -->
                     </div>
+
                     <div class="postbox">
-                        <h2>
-                            About This Plugin
-                        </h2>
+
+                        <h2>About Awesomplete</h2>
+
                         <div class="inside">
                             <p>
-                                Search Autocomplete is an extension and widget overrides Wordpress' standard autofill
-                                feature with a nicer looking and more functional alternative. It creates a search
-                                widget that autofills from the titles of products, blog posts, events,
-                                pages, or anything else you choose. For more information, documentation, and support
-                                <a href="https://www.dotcomjungle.com/" target="_blank" rel="noreferrer noopener">
-                                    please visit our website</a>.
+                                Dotcomjungle's Autocomplete Search Widget is powered by Lea Verou's
+                                <a href="https://leaverou.github.io/awesomplete/" target="_blank"
+                                   rel="noreferrer noopener">Awesomplete</a>,
+                                a simple yet high-powered javascript library. Awesomplete is distributed under
+                                the <a href="https://github.com/LeaVerou/awesomplete/blob/gh-pages/LICENSE"
+                                       target="_blank" rel="noreferrer noopener">MIT
+                                    License</a>, which is compatible with the GPLv3.
                             </p>
+                        </div>
+                        <!-- .inside -->
+                    </div>
+                    <!-- .postbox -->
+
+                    <div class="postbox">
+                        <div class="inside">
+                            <h4>Reporting Bugs</h4>
                             <p>
                                 If you find a bug, or have a suggestion or comment,
                                 <a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/issues"
@@ -306,28 +326,22 @@ global $dcj_awesomplete_plugin_url;
                                 <li>Active plugins</li>
                                 <li>Your current Search Autocomplete settings</li>
                                 <li>What you expect to happen</li>
-                                <li>A screenshot of what is actually happening</li>
+                                <li>A screen-shot of what is actually happening</li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="postbox">
-
-                        <h2>About Awesomplete</h2>
-
-                        <div class="inside">
+                            <h4>Contributing, Modifying, and Sharing</h4>
                             <p>
-                                Dotcomjungle's Autocomplete Search Widget is powered by Lea Verou's
-                                <a href="https://leaverou.github.io/awesomplete/" target="_blank"
-                                   rel="noreferrer noopener">Awesomplete</a>,
-                                a simple yet high-powered javascript library. Awesomplete is distributed under
-                                the <a href="https://github.com/LeaVerou/awesomplete/blob/gh-pages/LICENSE"
-                                       target="_blank" rel="noreferrer noopener">MIT
-                                    License</a>.
+                                This plugin is distributed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html"
+                                                                        target="_blank" rel="noreferrer noopener">
+                                    GPLv3</a> license, meaning it is free to use, share, or modify
+                                however you want! That said, we would love if you give us some credit if you use
+                                our work, just as we have done with Awesomplete.
+                                <br><br>
+                                If you want to contribute to this project, visit our
+                                <a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle#contributing-code"
+                                   target="_blank" rel="noreferrer noopener">Github</a>.
                             </p>
                         </div>
-                        <!-- .inside -->
                     </div>
-                    <!-- .postbox -->
 
                 </div>
                 <!-- .meta-box-sortables -->

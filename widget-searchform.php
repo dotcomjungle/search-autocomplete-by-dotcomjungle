@@ -51,10 +51,17 @@ if ( empty( $options ) ) {
 	// defaults
 	$options = dcj_awes_defaults();
 };
+
+
+$php_data_for_js = array(
+
+);
+
+
 ?>
 
 <script>
-    {
+    jQuery(document).ready(function() {
         function get_inputs() {
             const id_no_num = "<?php echo preg_replace( '/#.*/', '', $options['input_name'] ); ?>";
             var awesomplete_inputs;
@@ -84,7 +91,7 @@ if ( empty( $options ) ) {
                 list: <?php echo json_encode( $dcj_post_titles ); ?>,
                 minChars: <?php echo $options['min_chars']; ?>,
                 maxItems: <?php echo $options['max_items']; ?>,
-                sort: function(a, b) {
+                sort: function (a, b) {
                     // sort by number of matches
                     // returns negative for a, positive for b
                     return b.split(b.inpt).length - a.split(a.inpt).length
@@ -112,7 +119,7 @@ if ( empty( $options ) ) {
                 submit_button.style.display = 'none';
             }
         }
-    }
+    });
 
 </script>
 

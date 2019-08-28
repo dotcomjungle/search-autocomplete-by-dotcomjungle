@@ -71,7 +71,7 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 		// for titling in backend ?>
         <body>
         <p>
-            <label>Title</label>
+            <label>Title (Optional)</label>
             <input class="widefat" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text"
                    value="<?php echo $title; ?>"/>
         </p>
@@ -169,7 +169,8 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'dcj_awes_plug
 function dcj_awes_enqueue_scripts() {
 	global $dcj_awesomplete_plugin_url;
 	// js
-	wp_enqueue_script( 'dcj_awesomplete_js', $dcj_awesomplete_plugin_url . 'inc/awesomplete.js' );
+    wp_enqueue_script('jquery');
+	wp_enqueue_script( 'dcj_awes_awesomplete_js', $dcj_awesomplete_plugin_url . 'inc/awesomplete.js' );
 
 	// css
 	$options = get_option( 'dcj_awes_options' );

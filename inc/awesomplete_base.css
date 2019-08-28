@@ -37,7 +37,7 @@ div.awesomplete[id^="awesomplete_container"] > ul:empty {
 div.awesomplete[id^="awesomplete_container"] > ul {
     border-radius: .3em !important;
     margin: .2em 0 0 !important;
-    box-shadow: .05em .2em .6em rgba(0, 0, 0, .2) !important;
+    box-shadow: .05em .2em .6em 0.1em rgba(0, 0, 0, .2) !important;
     text-shadow: none !important;
 }
 
@@ -82,7 +82,7 @@ div.awesomplete[id^="awesomplete_container"] > div.awesomplete_pointer {
     -webkit-transform: rotate(45deg) !important;
     transform: rotate(45deg) !important;
     z-index: 6;
-    box-shadow: .05em .2em .6em rgba(0, 0, 0, .2) !important;
+    box-shadow: 0.25em 0.25em .6em 0.2em rgba(0, 0, 0, 0.4) !important;
 }
 
 div.awesomplete[id^="awesomplete_container"] > ul > li {
@@ -97,13 +97,7 @@ div.awesomplete[id^="awesomplete_container"] > ul > li {
 }
 
 div.awesomplete[id^="awesomplete_container"] > ul > li:first-of-type {
-    border-top-left-radius: .3em !important;
-    border-top-right-radius: .3em !important;
-}
-
-div.awesomplete[id^="awesomplete_container"] > ul > li:last-of-type {
-    border-bottom-left-radius: .3em !important;
-    border-bottom-right-radius: .3em !important;
+    border: none
 }
 
 div.awesomplete[id^="awesomplete_container"] > ul > li > mark {

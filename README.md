@@ -140,16 +140,10 @@ this issue is a bug or a feature request, having the issue will help provide con
 * Only touch files relevant to the issue in your PR. This reduces the time needed to review,
  and helps to prevent merge conflicts.
  
- ## Troubleshooting
- Here are some common problems we've run in to, that one might encounter with the plugin:
- * The plugin "Autoptomize" has a feature "optimize Javascript" that seems to break
- Awesomplete's Javascript file. If you have that plugin, try disabling the feature and 
- clearing any caches, and Search Autocomplete should function as expected.
- 
- ## Misc.
- > Why are there three files titled 'readme'?
- 
- This one, 'README.md' is for github. 'readme.txt' is used by Wordpress when
- the plugin is uploaded to the Wordpress plugin directory. 'readme-for-dcj-site' is
- for the documentation that is hosted on [our own website](https://www.dotcomjungle.com/).
- Other than the slight formatting differences, they should all be kept just about the same.
+## Misc.
+> Why are there three files titled 'readme'?
+
+This one, 'README.md' is for github. 'readme.txt' is used by Wordpress when
+the plugin is uploaded to the Wordpress plugin directory. 'readme-for-dcj-site' is
+for the documentation that is hosted on [our own website](https://www.dotcomjungle.com/).
+Other than the slight formatting differences, they should all be kept just about the same.

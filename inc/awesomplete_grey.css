@@ -11,7 +11,7 @@ div.awesomplete[id^="awesomplete_container"] > div.awesomplete_pointer {
 
 div.awesomplete[id^="awesomplete_container"] > ul > li {
     color: white !important;
-    border-color: #232323 !important;
+    border-color: #787878 !important;
 }
 
 div.awesomplete[id^="awesomplete_container"] > ul > li:hover {
