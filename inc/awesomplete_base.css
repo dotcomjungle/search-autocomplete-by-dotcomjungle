@@ -1,97 +1,111 @@
-div#awesomplete.awesomplete [hidden] {
-    display: none;
+div.awesomplete[id^="awesomplete_container"] [hidden] {
+    display: none !important;
 }
 
-div#awesomplete.awesomplete .visually-hidden {
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
+div.awesomplete[id^="awesomplete_container"] .visually-hidden {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0) !important;
 }
 
-div#awesomplete.awesomplete {
-    display: inline-block;
-    position: relative;
-    width: 100%;
+div.awesomplete[id^="awesomplete_container"] {
+    display: inline-block !important;
+    position: relative !important;
+    width: 100% !important;
 }
 
-div#awesomplete.awesomplete > input {
-    display: block;
-    width: 100%;
+div.awesomplete[id^="awesomplete_container"] > input {
+    display: block !important;
+    width: 100% !important;
 }
 
-div#awesomplete.awesomplete > ul {
-    position: absolute;
-    left: 0;
+div.awesomplete[id^="awesomplete_container"] > ul {
+    position: absolute !important;
+    left: 0 !important;
     z-index: 7 !important;
-    min-width: 100%;
-    box-sizing: border-box;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
     list-style: none !important;
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-y: scroll;
 }
 
-div#awesomplete.awesomplete > ul:empty {
-    display: none;
+div.awesomplete[id^="awesomplete_container"] > ul:empty {
+    display: none !important;
 }
 
-div#awesomplete.awesomplete > ul {
-    border-radius: .3em;
-    margin: .2em 0 0;
-    box-shadow: .05em .2em .6em rgba(0, 0, 0, .2);
-    text-shadow: none;
+div.awesomplete[id^="awesomplete_container"] > ul {
+    border-radius: .3em !important;
+    margin: .2em 0 0 !important;
+    box-shadow: .05em .2em .6em rgba(0, 0, 0, .2) !important;
+    text-shadow: none !important;
 }
 
 @supports (transform: scale(0)) {
-    div#awesomplete.awesomplete > ul {
-        transition: .3s cubic-bezier(.4, .2, .5, 1.4);
-        transform-origin: 1.43em -.43em;
+    div.awesomplete[id^="awesomplete_container"] > ul {
+        transition: .3s cubic-bezier(.4, .2, .5, 1.4) !important;
+        transform-origin: 1.43em -.43em !important;
     }
 
-    div#awesomplete.awesomplete > ul[hidden],
-    div#awesomplete.awesomplete > ul:empty {
-        opacity: 0;
-        transform: scale(0);
-        display: block;
-        transition-timing-function: ease;
+    div.awesomplete[id^="awesomplete_container"] > ul[hidden],
+    div.awesomplete[id^="awesomplete_container"] > ul:empty {
+        opacity: 0 !important;
+        transform: scale(0) !important;
+        display: block !important;
+        transition-timing-function: ease !important;
+    }
+
+    /* Pointer */
+    div.awesomplete[id^="awesomplete_container"] > div.awesomplete_pointer {
+        transition: .3s cubic-bezier(.4, .2, .5, 1.4) !important;
+    }
+
+    div.awesomplete[id^="awesomplete_container"] > div.awesomplete_pointer[hidden] {
+        opacity: 0 !important;
+        transform: scale(0) !important;
+        display: block !important;
+        transition-timing-function: cubic-bezier(0.0, 0.75, 0.45, 1.0) !important;
     }
 }
 
 /* Pointer */
-div#awesomplete.awesomplete > ul:before {
-    content: "";
-    position: absolute;
-    top: -.43em;
-    left: 1em;
-    width: 0;
-    height: 0;
-    padding: .4em;
-    border: inherit;
-    border-right: 0;
-    border-bottom: 0;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+div.awesomplete[id^="awesomplete_container"] > div.awesomplete_pointer {
+    content: "" !important;
+    position: absolute !important;
+    left: 1em !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: .4em !important;
+    border: inherit !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    -webkit-transform: rotate(45deg) !important;
+    transform: rotate(45deg) !important;
+    z-index: 6;
+    box-shadow: .05em .2em .6em rgba(0, 0, 0, .2) !important;
 }
 
-div#awesomplete.awesomplete > ul > li {
-    position: relative;
-    padding: .2em .5em;
-    cursor: pointer;
-    border-top-width: 1px;
-    border-bottom-width: 0;
+div.awesomplete[id^="awesomplete_container"] > ul > li {
+    position: relative !important;
+    padding: .2em .5em !important;
+    cursor: pointer !important;
+    border-top-width: 1px !important;
+    border-bottom-width: 0 !important;
     list-style: none !important;
-    margin: 0;
+    margin: 0 !important;
     z-index: 7 !important;
 }
 
-div#awesomplete.awesomplete > ul > li:first-of-type {
-    border-top-left-radius: .3em;
-    border-top-right-radius: .3em;
+div.awesomplete[id^="awesomplete_container"] > ul > li:first-of-type {
+    border-top-left-radius: .3em !important;
+    border-top-right-radius: .3em !important;
 }
 
-div#awesomplete.awesomplete > ul > li:last-of-type {
-    border-bottom-left-radius: .3em;
-    border-bottom-right-radius: .3em;
+div.awesomplete[id^="awesomplete_container"] > ul > li:last-of-type {
+    border-bottom-left-radius: .3em !important;
+    border-bottom-right-radius: .3em !important;
 }
 
-div#awesomplete.awesomplete > ul > li > mark {
-    padding: 0;
+div.awesomplete[id^="awesomplete_container"] > ul > li > mark {
+    padding: 0 !important;
 }

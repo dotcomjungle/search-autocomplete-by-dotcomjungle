@@ -1,4 +1,4 @@
-<?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+<?php defined( 'ABSPATH' ) or die( 'Direct access to this file is not permitted' );
 
 global $dcj_awesomplete_plugin_url;
 ?>
@@ -31,15 +31,28 @@ global $dcj_awesomplete_plugin_url;
 
                         <div class="inside">
                             <form name="dcj_awes_options_form" method="post" action="">
-                                <h4>Appearance</h4>
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td>
+                                            <h4 style="margin-top: 4px; margin-bottom: 4px">Appearance</h4>
+                                        </td>
+                                        <td style="width: max-content; text-align: right">
+                                            <em>For more information
+                                                <a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/blob/master/README.md"
+                                                   target="_blank" rel="noreferrer noopener">visit the documentation</a>
+                                            </em>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input type="hidden" name="dcj_awes_options_submitted" value="yes"/>
                                 <table>
 									<?php
 									$awes_theme     = $options['awes_theme_color'];
 									$awes_highlight = $options['highlight_color'];
 									$display        = $options['display_button'];
 									$placeholder    = $options['placeholder'];
+									$max_height     = $options['max_height'];
 									?>
-                                    <input type="hidden" name="dcj_awes_options_submitted" value="yes"/>
                                     <tr>
                                         <td>
                                             <label for="awes_theme_color" class="indent-pad">Color Theme of Autocomplete
@@ -61,6 +74,30 @@ global $dcj_awesomplete_plugin_url;
                                     </tr>
                                     <tr>
                                         <td>
+                                            <label for="placeholder_text" class="indent-pad">
+                                                Placeholder Text
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <input id="placeholder_text" name="placeholder_text" type="text"
+                                                   value="<?php echo $placeholder; ?>"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="indent-pad" for="max_height">Max Height of the Autocomplete
+                                                Pop-Up</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="max_height" id="max_height" min="0" step="1"
+                                                   value="<?php echo $max_height; ?>"/>
+                                        </td>
+                                        <td>
+                                            Pixels
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
                                             <label for="display_button" class="indent-pad">Display 'Search'
                                                 Button</label>
                                         </td>
@@ -69,17 +106,6 @@ global $dcj_awesomplete_plugin_url;
                                                    value="yes" <?php if ( $display == 'yes' ) {
 												echo 'checked';
 											}; ?>/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label for="placeholder_text" class="indent-pad">
-                                                Placeholder text
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <input id="placeholder_text" name="placeholder_text" type="text"
-                                                   value="<?php echo $placeholder; ?>"/>
                                         </td>
                                     </tr>
 
@@ -210,10 +236,6 @@ global $dcj_awesomplete_plugin_url;
                                                    value="Save"/>
                                             <input class="button-secondary" type="submit" name="dcj_restore_defaults"
                                                    value="Restore Defaults"/>
-                                            &nbsp;
-                                            <a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/blob/master/README.md"
-                                               target="_blank" rel="noreferrer noopener">view documentation</a>
-
                                         </td>
                                     </tr>
                                 </table>
@@ -238,7 +260,7 @@ global $dcj_awesomplete_plugin_url;
                             <p>
                                 <a href="https://www.dotcomjungle.com/" target="_blank" rel="noreferrer noopener">
                                     Dotcomjungle</a> partners with private and family-owned specialty manufacturers and
-                                retailers  to grow and strengthen their businesses. By partnering with Dotcomjungle's
+                                retailers to grow and strengthen their businesses. By partnering with Dotcomjungle's
                                 expertise in web development, systems integration, constraint elimination and project
                                 management, our clients support their content savvy marketing departments to increase
                                 sales and strengthen their businesses for long-term growth.<br><br>
@@ -312,7 +334,7 @@ global $dcj_awesomplete_plugin_url;
             </div>
             <!-- #postbox-container-1 .postbox-container -->
         </div>
-<!--         #post-body .metabox-holder .columns-2 -->
+        <!--         #post-body .metabox-holder .columns-2 -->
         <br class="clear">
     </div>
     <!-- #poststuff -->

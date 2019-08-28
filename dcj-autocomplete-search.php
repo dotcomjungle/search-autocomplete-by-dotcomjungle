@@ -14,7 +14,7 @@
  */
 
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+defined( 'ABSPATH' ) or die( 'Direct access to this file is not permitted' );
 
 // Globals
 $dcj_awesomplete_plugin_url = plugin_dir_url( __FILE__ );
@@ -80,7 +80,6 @@ function dcj_awesomplete_register_widgets() {
 add_action( 'widgets_init', 'dcj_awesomplete_register_widgets' );
 
 
-
 // create options page
 function dcj_awesomplete_add_options() {
 
@@ -93,6 +92,7 @@ function dcj_awesomplete_add_options() {
 	);
 
 }
+
 // output options page
 function dcj_awesomplete_options_page() {
 
@@ -114,17 +114,16 @@ function dcj_awesomplete_options_page() {
 			$options['min_chars']        = max( array( absint( $_POST['min_chars'] ), 1 ) );
 			$options['input_name']       = preg_replace( '/\s+/', '', esc_attr( $_POST['input_name_select_1'] ) );
 			$options['full_name']        = esc_attr( $_POST['full_name'] );
-			$options['placeholder']      = esc_attr($_POST['placeholder_text']);
+			$options['placeholder']      = esc_attr( $_POST['placeholder_text'] );
+			$options['max_height']       = max( array( absint( $_POST['max_height'] ), 1 ) );
 			$options['post_types']       = array();
 			foreach ( get_post_types( array( 'public' => true ) ) as $type ) {
 				$type                           = esc_attr( $type );
 				$options['post_types'][ $type ] = esc_attr( $_POST[ 'type_' . $type ] );
 			};
-			$options['last_update'] = time();
 		}
 
 		update_option( 'dcj_awes_options', $options );
-
 	};
 
 	// get options from database
@@ -142,7 +141,6 @@ function dcj_awesomplete_options_page() {
 }
 
 add_action( 'admin_menu', 'dcj_awesomplete_add_options' );
-
 
 
 // links in plugin area
@@ -180,8 +178,8 @@ function dcj_awes_enqueue_scripts() {
 	wp_enqueue_style( 'dcj_awesomplete_style_base', $dcj_awesomplete_plugin_url . 'inc/awesomplete_base.css' );
 	wp_enqueue_style( 'dcj_awesomplete_style_theme', $dcj_awesomplete_plugin_url . $theme_sheet );
 }
-add_action('wp_enqueue_scripts', 'dcj_awes_enqueue_scripts');
 
+add_action( 'wp_enqueue_scripts', 'dcj_awes_enqueue_scripts' );
 
 
 // default settings
@@ -196,7 +194,8 @@ function dcj_awes_defaults() {
 		'display_button'   => 'yes',
 		'input_name'       => '',
 		'full_name'        => 'yes',
-		'placeholder'      => '',
+		'placeholder'      => 'Search...',
+		'max_height'       => '500',
 	);
 	// add current post types
 	foreach ( get_post_types( array( 'public' => true ) ) as $type ) {

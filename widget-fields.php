@@ -1,6 +1,6 @@
 <!-- for naming widget in admin backend -->
 
-<?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
+<?php defined( 'ABSPATH' ) or die( 'Direct access to this file is not permitted' ); ?>
 
 <body>
 <p>

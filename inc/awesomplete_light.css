@@ -1,39 +1,39 @@
-div#awesomplete.awesomplete > ul {
+div.awesomplete[id^="awesomplete_container"] > ul {
     background: #ffffff !important;
     background: hsla(0, 0%, 100%, .9) !important;
     background: linear-gradient(to bottom right, white, hsla(0, 0%, 100%, .8)) !important;
 }
 
 /* Pointer */
-div#awesomplete.awesomplete > ul:before {
-    background: white !important;
+div.awesomplete[id^="awesomplete_container"] > div.awesomplete_pointer {
+    background: #ffffff !important;
 }
 
-div#awesomplete.awesomplete > ul > li {
+div.awesomplete[id^="awesomplete_container"] > ul > li {
     color: black !important;
     border-color: #ccd6d8 !important;
 }
 
-div#awesomplete.awesomplete > ul > li:hover {
+div.awesomplete[id^="awesomplete_container"] > ul > li:hover {
     background: hsl(200, 40%, 80%) !important;
     color: black !important;
 }
 
-div#awesomplete.awesomplete > ul > li[aria-selected="true"] {
+div.awesomplete[id^="awesomplete_container"] > ul > li[aria-selected="true"] {
     background: hsl(205, 40%, 40%) !important;
     color: black !important;
 }
 
-div#awesomplete.awesomplete mark {
+div.awesomplete[id^="awesomplete_container"] mark {
     background: hsl(65, 100%, 50%) !important;
     color: black !important;
 }
 
-div#awesomplete.awesomplete li:hover mark {
+div.awesomplete[id^="awesomplete_container"] li:hover mark {
     background: hsl(68, 100%, 41%) !important;
 }
 
-div#awesomplete.awesomplete li[aria-selected="true"] mark {
+div.awesomplete[id^="awesomplete_container"] li[aria-selected="true"] mark {
     background: hsl(86, 100%, 21%) !important;
     color: inherit !important;
 }

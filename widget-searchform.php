@@ -1,6 +1,6 @@
 <?php
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+defined( 'ABSPATH' ) or die( 'Direct access to this file is not permitted' );
 
 
 // get admin options for what post types to have awesomplete access
@@ -98,14 +98,14 @@ if ( empty( $options ) ) {
         let awes_inputs = get_inputs();
         for (i = 0; i < awes_inputs.length; i++) {
             create_awes(awes_inputs[i]);
-            if ('<?php echo( $options['display_button'] ); ?>' === '') {
-                let input_form = awes_inputs[i].closest('form');
-                if (input_form.querySelector('div.awesomplete') !== null) {
-                    let submit_button = input_form.querySelector(
-                        'button[type="submit"], input[type="submit"]'
-                    );
-                    submit_button.style.display = 'none';
-                }
+            let input_form = awes_inputs[i].closest('form');
+            let awes_list = input_form.querySelector('div.awesomplete > ul[id^="awesomplete_list"]');
+            awes_list.style.maxHeight = '<?php echo $options['max_height'] . 'px'; ?>';
+            if ('<?php echo( $options['display_button'] ); ?>' !== 'yes') {
+                let submit_button = input_form.querySelector(
+                    'button[type="submit"], input[type="submit"]'
+                );
+                submit_button.style.display = 'none';
             }
         }
     }

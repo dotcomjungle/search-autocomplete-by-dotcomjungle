@@ -73,21 +73,31 @@ settings to their original values, you can select 'Restore Defaults' at the bott
 it will do just that.
 
 ##### Appearance
-This section allows you to change the color scheme of the pop-up box to complement your
-site's theme, and to not display the search button for the widget. This second option
-exists because, on certain themes such as the WordPress Twenty-Twelve theme, certain
-styling rules make it so that the search button is awkwardly pushed to the next line.
-To avoid this, the button can be hidden entirely. This feature does not change the
-functionality at all; pressing enter will search just like normal. In this case it is
-recommended to include some placeholder text (something like "Search..." or "Type
-something") to indicate the purpose of the box.
+This section allows you to change the color scheme and various other appearance features
+of the autocomplete box. You can select a color theme from Light, Grey, or Dark to complement
+your site's theme, and can set placeholder text that will appear in the search box.
+You can also set a maximum height of the autocomplete pop-up, and whether to display
+the search button, or just the text-field alone.
+
+The max height option exists for cases
+where the autofill results are long enough to overflow into undesired areas or get awkwardly
+cropped. If the results are longer than the specified pixel-height, they will present as
+a scrollable list instead. This option is especially useful if you are placing the
+widget in a footer area where it may flow off the page.
+
+The display search button option exists because, on certain themes
+such as the WordPress Twenty-Twelve theme, certain styling rules make it so that the search
+button is awkwardly pushed to the next line. To avoid this, the button can be hidden entirely.
+This feature does not change the functionality at all; pressing enter will search just
+like normal. In this case it is recommended to include some placeholder text to indicate
+the purpose of the box.
 
 ##### Functionality
 Here, you are able to choose which types of posts the autocomplete pop-up will get the
-titles from. This list is programatically generated, so it you add a new post type, such
+titles from. This list is programmatically generated, so if you add a new post type, such
 as 'Events,' it will appear here. By default only 'Post' and 'Product' (if it exists) are
-selected. Below that, two number inputs allow you to customize how and when the autocomplete
-box will appear.
+selected. Below that, two number inputs allow you to customize when the autocomplete box
+will appear and how many results it will display.
 
 ##### Advanced
 Don't be scared by the 'advanced' title, it's not too complex. It just requires a little

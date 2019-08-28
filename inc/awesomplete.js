@@ -47,6 +47,12 @@
 
         this.container = this.container(input);
 
+        this.pointer = $.create("div", {
+            className: "awesomplete_pointer",
+            hidden: "hidden",
+            inside: this.container
+        });
+
         this.ul = $.create("ul", {
             hidden: "hidden",
             role: "listbox",
@@ -177,6 +183,7 @@
 
             this.input.setAttribute("aria-expanded", "false");
             this.ul.setAttribute("hidden", "");
+            this.pointer.setAttribute("hidden", "");
             this.isOpened = false;
             this.index = -1;
 
@@ -188,6 +195,7 @@
         open: function () {
             this.input.setAttribute("aria-expanded", "true");
             this.ul.removeAttribute("hidden");
+            this.pointer.removeAttribute("hidden");
             this.isOpened = true;
 
             this.status.removeAttribute("hidden");
@@ -358,7 +366,7 @@
 
     _.CONTAINER = function (input) {
         return $.create("div", {
-            id: "awesomplete",
+            id: "awesomplete_container_" + this.count,
             className: "awesomplete",
             around: input
         });
