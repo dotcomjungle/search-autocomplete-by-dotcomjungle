@@ -66,7 +66,7 @@ class DCJ_Awesomplete_Widget extends WP_Widget {
 		// Output admin widget options form
 
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
-		$title    = esc_attr( $instance['title'] );
+		$title    = sanitize_text_field( $instance['title'] );
 
 		// for titling in backend ?>
         <body>
@@ -105,34 +105,36 @@ function dcj_awesomplete_add_options() {
 function dcj_awesomplete_options_page() {
 
 	if ( ! current_user_can( 'manage_options' ) ) {
-		wp_die( 'perimission denied' );
+		wp_die( 'You do not have permission to manage settings.' );
 	};
 
 	$default_options = dcj_awes_defaults();
 
 	$options = array();
 	// update options on submit
-	if ( esc_html( $_POST['dcj_awes_options_submitted'] ) == "yes" ) {
+	if ( isset( $_POST['_dcj_awes_options_nonce'] ) && wp_verify_nonce($_POST['_dcj_awes_options_nonce'], 'dcj_awes_options_saved') ) {
 		if ( isset( $_POST['dcj_restore_defaults'] ) ) {
 			$options = $default_options;
 		} else {
-			$options['awes_theme_color'] = esc_attr( $_POST['awes_theme_color'] );
-			$options['display_button']   = esc_attr( $_POST['display_button'] );
+			$options['awes_theme_color'] = sanitize_text_field( $_POST['awes_theme_color'] );
+			$options['display_button']   = sanitize_text_field( $_POST['display_button'] );
 			$options['max_items']        = max( array( absint( $_POST['max_items'] ), 1 ) );
 			$options['min_chars']        = max( array( absint( $_POST['min_chars'] ), 1 ) );
-			$options['input_name']       = preg_replace( '/\s+/', '', esc_attr( $_POST['input_name_select_1'] ) );
-			$options['full_name']        = esc_attr( $_POST['full_name'] );
-			$options['placeholder']      = esc_attr( $_POST['placeholder_text'] );
+			$options['input_name']       = preg_replace( '/\s+/', '', sanitize_text_field( $_POST['input_name_select_1'] ) );
+			$options['full_name']        = sanitize_text_field( $_POST['full_name'] );
+			$options['placeholder']      = sanitize_text_field( $_POST['placeholder_text'] );
 			$options['max_height']       = max( array( absint( $_POST['max_height'] ), 1 ) );
 			$options['post_types']       = array();
 			foreach ( get_post_types( array( 'public' => true ) ) as $type ) {
-				$type                           = esc_attr( $type );
-				$options['post_types'][ $type ] = esc_attr( $_POST[ 'type_' . $type ] );
+				$type                           = sanitize_text_field( $type );
+				$options['post_types'][ $type ] = sanitize_text_field( $_POST[ 'type_' . $type ] );
 			};
 		}
 
 		update_option( 'dcj_awes_options', $options );
-	};
+	} else {
+	    error_log('Search Autocomplete Error: Your nonce failed');
+    }
 
 	// get options from database
 	$options = get_option( 'dcj_awes_options' );
@@ -210,9 +212,9 @@ function dcj_awes_defaults() {
 	// add current post types
 	foreach ( get_post_types( array( 'public' => true ) ) as $type ) {
 		if ( $type === 'post' || $type === 'product' ) {
-			$default_options['post_types'][ esc_attr( $type ) ] = 'yes';
+			$default_options['post_types'][ sanitize_text_field( $type ) ] = 'yes';
 		} else {
-			$default_options['post_types'][ esc_attr( $type ) ] = null;
+			$default_options['post_types'][ sanitize_text_field( $type ) ] = null;
 		}
 	}
 

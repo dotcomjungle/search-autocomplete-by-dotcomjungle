@@ -56,7 +56,7 @@ global $dcj_awesomplete_plugin_url;
                                         </td>
                                     </tr>
                                 </table>
-                                <input type="hidden" name="dcj_awes_options_submitted" value="yes"/>
+                                <?php wp_nonce_field('dcj_awes_options_saved', '_dcj_awes_options_nonce') ?>
                                 <table>
 									<?php
 									$awes_theme     = $options['awes_theme_color'];
@@ -170,10 +170,6 @@ global $dcj_awesomplete_plugin_url;
                                             <h4>Advanced</h4>
                                         </td>
                                         <td>
-											<?php $show_advanced = esc_attr( $_POST['show_advanced'] ); ?>
-                                            <input type="hidden" id="show_advanced" name="show_advanced"
-                                                   value="<?php echo $show_advanced; ?>"/>
-
                                             <a onclick="
                                                 document.getElementById('dcj_advanced_settings').style.display = 'block';
                                                 document.getElementById('hide_button').style.display = 'block';
@@ -209,8 +205,7 @@ global $dcj_awesomplete_plugin_url;
 												?>
                                                 <label class="indent-pad" for="input_name_select_1">Input Name: </label>
                                                 <input type="text" id="input_name_select_1" name="input_name_select_1"
-                                                       autocomplete="off" value="<?php echo $input_name; ?>"/>
-                                                &nbsp;
+                                                       autocomplete="off" value="<?php echo $input_name; ?>"/>&nbsp;
                                                 <input type="checkbox" id="full_name" name="full_name"
                                                        value="yes" <?php if ( $full_name == 'yes' ) {
 													echo 'checked';
