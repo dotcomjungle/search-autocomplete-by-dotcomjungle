@@ -283,9 +283,9 @@ global $dcj_awesomplete_plugin_url;
                                 which we love to share with the open source community, like this!
                             </p>
                             <p>
-                                Learn more about us and what we can do for you and your Wordpress site
+                                Learn more about us and what we can do for you and your business
                                 <a href="https://www.dotcomjungle.com/" target="_blank" rel="noreferrer noopener">
-                                    here</a>!
+                                here</a>!
                             </p>
                         </div>
                         <!-- .inside -->
@@ -303,7 +303,7 @@ global $dcj_awesomplete_plugin_url;
                                 a simple yet high-powered javascript library. Awesomplete is distributed under
                                 the <a href="https://github.com/LeaVerou/awesomplete/blob/gh-pages/LICENSE"
                                        target="_blank" rel="noreferrer noopener">MIT
-                                    License</a>, which is compatible with the GPLv3.
+                                    License</a>.
                             </p>
                         </div>
                         <!-- .inside -->
@@ -338,7 +338,7 @@ global $dcj_awesomplete_plugin_url;
                                 <br><br>
                                 If you want to contribute to this project, visit our
                                 <a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle#contributing-code"
-                                   target="_blank" rel="noreferrer noopener">Github</a>.
+                                   target="_blank" rel="noreferrer noopener">GitHub</a>.
                             </p>
                         </div>
                     </div>

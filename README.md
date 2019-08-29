@@ -40,15 +40,16 @@ what is being done, why it is being done and how to measure both our and your su
 ## Plugin Documentation
 
 #### Installation
-1. Install the plugin through the WordPress plugin-install screen directly in the site (recommended 
-method), or download the latest release of this project from this GitHub and upload the 
-uncompressed folder `dcj-autocomplete-search` to the directory `{Site Root}/wp-content/plugins/`
+1. Install the plugin 'Search Autocomplete by Dotcomjungle' through the WordPress 
+plugin-install screen directly in your Wordpress site (recommended method), or download the 
+latest release of this project from this GitHub and upload the uncompressed folder 
+'search-autocomplete-by-dotcomjungle' to the directory '{Site Root}/wp-content/plugins/'
 2. Activate 'Search Autocomplete by Dotcomjungle' through the 'Plugins' screen in WordPress
 3. Use the 'Settings' > 'Search Autocomplete by Dotcomjungle' screen to configure the plugin
 4. Under the 'Appearance' > 'Widgets' admin section, you may use the standard Wordpress widget methods
 to name and add the widget to any widget-area on your site
 
-You're all done!
+You're all ready!
 
 #### Basic Use
 Once the plugin is installed and activated, you're ready to insert the basic widget. Under the admin
@@ -144,7 +145,7 @@ this issue is a bug or a feature request, having the issue will help provide con
 > Why are there three files titled 'readme'?
 
 This one, 'README.md' is for github. 'readme-for-dcj-site' is
-for the documentation that is hosted on [our own website](https://www.dotcomjungle.com/).
+for the documentation that is hosted on [our own website](https://www.dotcomjungle.com/search-autocomplete-extension-for-wordpress/).
 Other than the slight formatting differences, those two should all be kept just about the same.
 'readme.txt' is used by Wordpress when the plugin is uploaded to the Wordpress plugin directory,
 and is more stripped-down.

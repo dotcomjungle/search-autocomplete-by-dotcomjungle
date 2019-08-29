@@ -23,15 +23,18 @@ Latest Version: 1.0
 ## Plugin Documentation
 
 #### Installation
-1. Install the plugin through the WordPress plugin-install screen directly in the site (recommended 
-method), or download the latest release of this project from this GitHub and upload the 
-uncompressed folder 'dcj-autocomplete-search' to the directory '{Site Root}/wp-content/plugins/'
+1. Install the plugin 'Search Autocomplete by Dotcomjungle' through the WordPress 
+plugin-install screen directly in your Wordpress site (recommended method), or download the 
+latest release of this project from the 
+[GitHub](https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/releases) 
+and upload the uncompressed folder 'search-autocomplete-by-dotcomjungle' to the directory 
+'{Site Root}/wp-content/plugins/'
 2. Activate 'Search Autocomplete by Dotcomjungle' through the 'Plugins' screen in WordPress
 3. Use the 'Settings' > 'Search Autocomplete by Dotcomjungle' screen to configure the plugin
 4. Under the 'Appearance' > 'Widgets' admin section, you may use the standard Wordpress widget methods
 to name and add the widget to any widget-area on your site
 
-You're all done!
+You're all ready!
 
 #### Basic Use
 Once the plugin is installed and activated, you're ready to insert the basic widget. Under the admin
@@ -57,11 +60,11 @@ your site's theme, and can set placeholder text that will appear in the search b
 You can also set a maximum height of the autocomplete pop-up, and whether to display
 the search button, or just the text-field alone. 
 
-The max height option exists for cases
-where the autofill results are long enough to overflow into undesired areas or get awkwardly
-cropped. If the results are longer than the specified pixel-height, they will present as
-a scrollable list instead. This option is especially useful if you are placing the 
-widget in a footer area where it may flow off the page.
+The max height option exists for cases where the autofill results are long enough to 
+overflow into undesired areas or get awkwardly cropped. If the results are longer than 
+the specified pixel-height, they will present as a scrollable list instead. This option 
+is especially useful if you are placing the widget in a footer area where it may flow 
+off the page.
 
 The display search button option exists because, on certain themes 
 such as the WordPress Twenty-Twelve theme, certain styling rules make it so that the search 
@@ -101,8 +104,8 @@ with the details described below.
 
 ## Improving this Plugin
 
-To report a bug, or contribute code to this project, visit the 
+To report a bug, or contribute code to this open source project, visit the 
 [GitHub](https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle#improving-this-plugin)
-for this project.
+for this plugin.
  
  

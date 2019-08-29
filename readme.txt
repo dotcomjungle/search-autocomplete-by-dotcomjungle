@@ -1,6 +1,6 @@
 === Search Autocomplete by Dotcomjungle ===
 Contributors: dotcomjungle
-Tags: autocomplete, search, suggest, custom, predictive, widget, dotcomjungle, awesomplete
+Tags: autocomplete, search, autofill, suggest, custom, predictive, widget, dotcomjungle, awesomplete
 Tested up to: 5.2.2
 Requires at least: 5.0
 Stable tag: 1.0
@@ -42,19 +42,23 @@ what is being done, why it is being done and how to measure both our and your su
 
 == Installation ==
 
-1. Install the plugin through the WordPress plugin-install screen directly in the site (recommended method), or download the
-latest release of this project from the [GitHub](https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/releases)
-and upload the uncompressed folder `dcj-autocomplete-search` to the directory `{Site Root}/wp-content/plugins/`
+1. Install the plugin 'Search Autocomplete by Dotcomjungle' through the WordPress
+plugin-install screen directly in your Wordpress site (recommended method), or download the
+latest release of this project from the
+[GitHub](https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/releases)
+and upload the uncompressed folder 'search-autocomplete-by-dotcomjungle' to the directory
+'{Site Root}/wp-content/plugins/'
 2. Activate 'Search Autocomplete by Dotcomjungle' through the 'Plugins' screen in WordPress
 3. Use the 'Settings' > 'Search Autocomplete by Dotcomjungle' screen to configure the plugin
 4. Under the 'Appearance' > 'Widgets' admin section, you may use the standard Wordpress widget methods
 to name and add the widget to any widget-area on your site
 
-You're all done!
+You're all ready!
 
 
 == Plugin Documentation ==
-For documentation and support for this plugin, [visit the documentation](https://www.dotcomjungle.com/search-autocomplete-extension-for-wordpress/)
+For documentation and support for this plugin,
+[visit the documentation](https://www.dotcomjungle.com/search-autocomplete-extension-for-wordpress/)
 
 
 == Changelog ==

@@ -2,7 +2,7 @@
 
 /**
  *    Plugin Name: Search Autocomplete by Dotcomjungle
- *    Plugin URI: https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle
+ *    Plugin URI: https://www.dotcomjungle.com/search-autocomplete-extension-for-wordpress/
  *    Description: A customizable search widget that autocompletes the titles of products, blog posts, events, or anything else you choose.
  *    Version: 1.0
  *    Author: Dotcomjungle
@@ -155,14 +155,15 @@ add_action( 'admin_menu', 'dcj_awesomplete_add_options' );
 function dcj_awes_plugin_action_links( $original_links ) {
 	$more_links = array(
 		'<a href="' . site_url() . '/wp-admin/options-general.php?page=dcj-autocomplete-options">Settings</a>',
-		'<a href="https://github.com/dotcomjungle/search-autocomplete-by-dotcomjungle/blob/master/README.md">Documentation</a>',
+		'<a href="https://www.dotcomjungle.com/search-autocomplete-extension-for-wordpress/">Documentation</a>',
 	);
 	$all_links  = array_merge( $more_links, $original_links );
-
+	// uninstall
+//	$all_links[] = '<span class="delete"><a class="delete">Uninstall</a></span>';
 	return $all_links;
 }
-
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'dcj_awes_plugin_action_links', 10, 1 );
+
 
 
 // enqueue awesomplete scripts and styles
