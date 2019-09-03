@@ -112,29 +112,31 @@ function dcj_awesomplete_options_page() {
 
 	$options = array();
 	// update options on submit
-	if ( isset( $_POST['_dcj_awes_options_nonce'] ) && wp_verify_nonce($_POST['_dcj_awes_options_nonce'], 'dcj_awes_options_saved') ) {
-		if ( isset( $_POST['dcj_restore_defaults'] ) ) {
-			$options = $default_options;
-		} else {
-			$options['awes_theme_color'] = sanitize_text_field( $_POST['awes_theme_color'] );
-			$options['display_button']   = sanitize_text_field( $_POST['display_button'] );
-			$options['max_items']        = max( array( absint( $_POST['max_items'] ), 1 ) );
-			$options['min_chars']        = max( array( absint( $_POST['min_chars'] ), 1 ) );
-			$options['input_name']       = preg_replace( '/\s+/', '', sanitize_text_field( $_POST['input_name_select_1'] ) );
-			$options['full_name']        = sanitize_text_field( $_POST['full_name'] );
-			$options['placeholder']      = sanitize_text_field( $_POST['placeholder_text'] );
-			$options['max_height']       = max( array( absint( $_POST['max_height'] ), 1 ) );
-			$options['post_types']       = array();
-			foreach ( get_post_types( array( 'public' => true ) ) as $type ) {
-				$type                           = sanitize_text_field( $type );
-				$options['post_types'][ $type ] = sanitize_text_field( $_POST[ 'type_' . $type ] );
-			};
-		}
+	if ( isset( $_POST['_dcj_awes_options_nonce'] ) ) {
+		if ( wp_verify_nonce( $_POST['_dcj_awes_options_nonce'], 'dcj_awes_options_saved' ) ) {
+			if ( isset( $_POST['dcj_restore_defaults'] ) ) {
+				$options = $default_options;
 
-		update_option( 'dcj_awes_options', $options );
-	} else {
-	    error_log('Search Autocomplete Error: Your nonce failed');
-    }
+			} else {
+				$options['awes_theme_color'] = sanitize_text_field( $_POST['awes_theme_color'] );
+				$options['display_button']   = sanitize_text_field( $_POST['display_button'] );
+				$options['max_items']        = max( array( absint( $_POST['max_items'] ), 1 ) );
+				$options['min_chars']        = max( array( absint( $_POST['min_chars'] ), 1 ) );
+				$options['input_name']       = preg_replace( '/\s+/', '', sanitize_text_field( $_POST['input_name_select_1'] ) );
+				$options['full_name']        = sanitize_text_field( $_POST['full_name'] );
+				$options['placeholder']      = sanitize_text_field( $_POST['placeholder_text'] );
+				$options['max_height']       = max( array( absint( $_POST['max_height'] ), 1 ) );
+				$options['post_types']       = array();
+				foreach ( get_post_types( array( 'public' => true ) ) as $type ) {
+					$type                           = sanitize_text_field( $type );
+					$options['post_types'][ $type ] = sanitize_text_field( $_POST[ 'type_' . $type ] );
+				};
+			}
+			update_option( 'dcj_awes_options', $options );
+		} else {
+			error_log( 'Search Autocomplete Error: Your nonce failed' );
+		}
+	}
 
 	// get options from database
 	$options = get_option( 'dcj_awes_options' );
@@ -164,15 +166,15 @@ function dcj_awes_plugin_action_links( $original_links ) {
 //	$all_links[] = '<span class="delete"><a class="delete">Uninstall</a></span>';
 	return $all_links;
 }
-add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'dcj_awes_plugin_action_links', 10, 1 );
 
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'dcj_awes_plugin_action_links', 10, 1 );
 
 
 // enqueue awesomplete scripts and styles
 function dcj_awes_enqueue_scripts() {
 	global $dcj_awesomplete_plugin_url;
 	// js
-    wp_enqueue_script('jquery');
+	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'dcj_awes_awesomplete_js', $dcj_awesomplete_plugin_url . 'inc/awesomplete.js' );
 
 	// css
